@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://Player/character.tscn" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://crjy7n1e3nfkj" path="res://Scripts/Managers/RaidSequence.gd" id="2_reseb"]
 [ext_resource type="PackedScene" uid="uid://dqoxbykl7fg8w" path="res://Interface/hud.tscn" id="3_1n4es"]
-[ext_resource type="PackedScene" uid="uid://btcbf58h7yvlx" path="res://Map/sky/day_night_cycle.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://btcbf58h7yvlx" path="res://Map/sky/sky.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://lx7gpi1nvcv2" path="res://Map/Buildings/checkpoint.gltf" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://ckqfi05gehmb6" path="res://Map/car2.gltf" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://df64xm21pute5" path="res://Map/Buildings/house_b.gltf" id="5_wnkbs"]
@@ -113,8 +113,7 @@ front_door = NodePath("../PlayerHouse/Doors/FrontDoor")
 
 [node name="HUD" parent="." unique_id=758873281 instance=ExtResource("3_1n4es")]
 
-[node name="DayNightCycle" parent="." unique_id=1429322333 instance=ExtResource("3_h2yge")]
-script = null
+[node name="Sky" parent="." unique_id=1429322333 instance=ExtResource("3_h2yge")]
 
 [node name="PlayerHouse" parent="." unique_id=1219285982 instance=ExtResource("7_5vo8o")]
 transform = Transform3D(0.29308844, 0, -0.3008308, 0, 0.42, 0, 0.3008308, 0, 0.29308844, 92.752914, 3.8480911, 266.753)

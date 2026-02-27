@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://btcbf58h7yvlx"]
 
-[ext_resource type="Script" uid="uid://b0eit112u3yr3" path="res://Map/sky/DayNightCycle.gd" id="1_vxjp2"]
+[ext_resource type="Script" uid="uid://b0eit112u3yr3" path="res://Map/sky/Sky.gd" id="1_vxjp2"]
 [ext_resource type="Material" uid="uid://dh6ykun8bv60u" path="res://Map/sky/examples/day_sky.tres" id="2_t2ff6"]
 
 [sub_resource type="Gradient" id="Gradient_pmrgb"]
