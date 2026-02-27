@@ -1,0 +1,483 @@
+[gd_scene format=3 uid="uid://dqoxbykl7fg8w"]
+
+[ext_resource type="Script" uid="uid://dvqtbq1xcbrvv" path="res://Interface/hud.gd" id="1_jq685"]
+[ext_resource type="Script" uid="uid://di83xpkcqfpbw" path="res://Scripts/Managers/StatusManager.gd" id="2_4i735"]
+[ext_resource type="Script" uid="uid://c3mnecndcoemi" path="res://Scripts/Managers/TimeManager.gd" id="2_7brmu"]
+[ext_resource type="Texture2D" uid="uid://b7tghv14w810u" path="res://Interface/circle_progress.png" id="3_28tah"]
+[ext_resource type="Script" uid="uid://c6aj1rblivlac" path="res://Interface/interact_ui.gd" id="4_mb2mj"]
+[ext_resource type="Texture2D" uid="uid://bi1lgavhmkq5c" path="res://Interface/UI_icons.png" id="5_jsbdt"]
+[ext_resource type="Script" uid="uid://c8buprwgcbrbt" path="res://Interface/TestStuff/test_stuff.gd" id="6_4i735"]
+[ext_resource type="Script" uid="uid://c7iwts56hctfr" path="res://Interface/Inventory/search_ui.gd" id="6_yux2m"]
+[ext_resource type="Script" uid="uid://c4tduqpqj1rpx" path="res://Interface/time_ui.gd" id="8_6je1u"]
+[ext_resource type="Script" uid="uid://cgkx7jos6fxce" path="res://Interface/guest_roster.gd" id="10_5bft6"]
+[ext_resource type="PackedScene" uid="uid://dhpfeub82th3n" path="res://Interface/Inventory/inventory_ui.tscn" id="11_lwdvj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1uf33"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yux2m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4i735"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yux2m"]
+atlas = ExtResource("5_jsbdt")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5bft6"]
+
+[node name="HUD" type="Control" unique_id=758873281]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_jq685")
+
+[node name="TimeManager" type="Node" parent="." unique_id=218433389]
+script = ExtResource("2_7brmu")
+
+[node name="Timer" type="Timer" parent="TimeManager" unique_id=935979013]
+autostart = true
+
+[node name="StatusManager" type="Node" parent="." unique_id=769540176]
+unique_name_in_owner = true
+script = ExtResource("2_4i735")
+
+[node name="StatusCheckTimer" type="Timer" parent="StatusManager" unique_id=1351879860]
+unique_name_in_owner = true
+autostart = true
+
+[node name="RecoveryDelayTimer" type="Timer" parent="StatusManager" unique_id=713717736]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="StatusUI" type="PanelContainer" parent="." unique_id=1249952142]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -240.0
+offset_right = 144.0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1uf33")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StatusUI" unique_id=483748171]
+layout_mode = 2
+
+[node name="HPLabel" type="Label" parent="StatusUI/VBoxContainer" unique_id=1763056091]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.99999994, 0.10443371, 0.056671128, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.84705883)
+text = "HP"
+horizontal_alignment = 1
+
+[node name="HPBar" type="ProgressBar" parent="StatusUI/VBoxContainer" unique_id=888025147]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+show_percentage = false
+
+[node name="HPValue" type="Label" parent="StatusUI/VBoxContainer/HPBar" unique_id=1901457213]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10/10"
+horizontal_alignment = 1
+
+[node name="EnergyLabel" type="Label" parent="StatusUI/VBoxContainer" unique_id=21904112]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78260213, 0.44826764, 0.029553052, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.84705883)
+text = "ENERGY"
+horizontal_alignment = 1
+
+[node name="EnergyBar" type="ProgressBar" parent="StatusUI/VBoxContainer" unique_id=1364257726]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+show_percentage = false
+
+[node name="EnergyValue" type="Label" parent="StatusUI/VBoxContainer/EnergyBar" unique_id=1491364799]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10/10"
+horizontal_alignment = 1
+
+[node name="StaminaLabel" type="Label" parent="StatusUI/VBoxContainer" unique_id=1294042997]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.36328852, 0.6186858, 0.2774686, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.84705883)
+text = "STAMINA"
+horizontal_alignment = 1
+
+[node name="StaminaBar" type="ProgressBar" parent="StatusUI/VBoxContainer" unique_id=1420224168]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+show_percentage = false
+
+[node name="StaminaValue" type="Label" parent="StatusUI/VBoxContainer/StaminaBar" unique_id=670983416]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "100/100"
+horizontal_alignment = 1
+
+[node name="SatietyUI" type="PanelContainer" parent="StatusUI/VBoxContainer" unique_id=1682203168]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_yux2m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StatusUI/VBoxContainer/SatietyUI" unique_id=808967914]
+layout_mode = 2
+
+[node name="SatietyLabel" type="Label" parent="StatusUI/VBoxContainer/SatietyUI/VBoxContainer" unique_id=2047885197]
+layout_mode = 2
+text = "Satiety"
+horizontal_alignment = 1
+
+[node name="SatietyBar" type="ProgressBar" parent="StatusUI/VBoxContainer/SatietyUI/VBoxContainer" unique_id=876787057]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ActionProgressBar" type="TextureProgressBar" parent="." unique_id=207123865]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+fill_mode = 4
+texture_progress = ExtResource("3_28tah")
+
+[node name="InteractUI" type="PanelContainer" parent="." unique_id=1490746018]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -42.0
+offset_right = 47.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4i735")
+script = ExtResource("4_mb2mj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InteractUI" unique_id=569730731]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="InteractIcon" type="TextureRect" parent="InteractUI/VBoxContainer" unique_id=1693853530]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_yux2m")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="InteractLabel" type="RichTextLabel" parent="InteractUI/VBoxContainer" unique_id=647827917]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center]Interact"
+fit_content = true
+
+[node name="RaidWarningUI" type="Control" parent="." unique_id=1108982129]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("6_yux2m")
+
+[node name="RaidContainer" type="VBoxContainer" parent="RaidWarningUI" unique_id=1719165186]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RaidInProgressLabel" type="Label" parent="RaidWarningUI/RaidContainer" unique_id=325107014]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8198404, 0.316694, 1.92523e-07, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 28
+text = "RAID IN PROGRESS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnswerDoorTimerLabel" type="Label" parent="RaidWarningUI/RaidContainer" unique_id=1556250405]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.90588236)
+theme_override_constants/shadow_outline_size = 6
+theme_override_font_sizes/font_size = 36
+text = "TIME LEFT!"
+horizontal_alignment = 1
+
+[node name="FriskWarning" type="Label" parent="RaidWarningUI" unique_id=851297797]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -173.5
+offset_top = -263.0
+offset_right = 173.5
+offset_bottom = -240.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.26338115, 0.16588688, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.78039217)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_outline_size = 3
+theme_override_font_sizes/font_size = 22
+text = "!! YOU ARE BEING SEARCHED !!"
+horizontal_alignment = 1
+
+[node name="BustedLabel" type="Label" parent="RaidWarningUI" unique_id=1536012025]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -304.56833
+offset_top = -76.35623
+offset_right = 378.43164
+offset_bottom = 59.64377
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.25272197
+pivot_offset = Vector2(325.9583, 60.312317)
+theme_override_colors/font_color = Color(0.9225075, 0.12824076, 0.12914181, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.78039217)
+theme_override_constants/shadow_outline_size = 8
+theme_override_font_sizes/font_size = 135
+text = "BUSTED!!!"
+horizontal_alignment = 1
+
+[node name="ClearLabel" type="Label" parent="RaidWarningUI" unique_id=1450697655]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -328.56836
+offset_top = -44.3562
+offset_right = 354.43164
+offset_bottom = 91.6438
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.033457115
+pivot_offset = Vector2(325.9583, 60.312317)
+theme_override_colors/font_color = Color(0.08229431, 0.607072, 0.19667298, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.78039217)
+theme_override_constants/shadow_outline_size = 8
+theme_override_font_sizes/font_size = 135
+text = "CLEAR!"
+horizontal_alignment = 1
+
+[node name="TestStuff" type="Control" parent="." unique_id=161768506]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("6_4i735")
+
+[node name="TestHUD" type="VBoxContainer" parent="TestStuff" unique_id=833593531]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -152.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 92.0
+grow_horizontal = 0
+
+[node name="StartRaid" type="Button" parent="TestStuff/TestHUD" unique_id=454979144]
+visible = false
+layout_mode = 2
+text = "Start Raid!"
+
+[node name="SuspicionUI" type="PanelContainer" parent="TestStuff/TestHUD" unique_id=106634071]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_yux2m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TestStuff/TestHUD/SuspicionUI" unique_id=1005037508]
+layout_mode = 2
+
+[node name="SuspicionLabel" type="Label" parent="TestStuff/TestHUD/SuspicionUI/VBoxContainer" unique_id=838127705]
+layout_mode = 2
+text = "Regime Suspicion"
+horizontal_alignment = 1
+
+[node name="SuspicionBar" type="ProgressBar" parent="TestStuff/TestHUD/SuspicionUI/VBoxContainer" unique_id=370519945]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ResistanceUI" type="PanelContainer" parent="TestStuff/TestHUD" unique_id=531704246]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_yux2m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TestStuff/TestHUD/ResistanceUI" unique_id=1195480322]
+layout_mode = 2
+
+[node name="ResistanceLabel" type="Label" parent="TestStuff/TestHUD/ResistanceUI/VBoxContainer" unique_id=1942168594]
+layout_mode = 2
+text = "Resistance"
+horizontal_alignment = 1
+
+[node name="ResistanceBar" type="ProgressBar" parent="TestStuff/TestHUD/ResistanceUI/VBoxContainer" unique_id=90983283]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SearchLabels" type="VBoxContainer" parent="TestStuff" unique_id=663606075]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 197.0
+offset_bottom = 64.0
+
+[node name="PatienceLabel" type="Label" parent="TestStuff/SearchLabels" unique_id=1212187384]
+layout_mode = 2
+text = "Patience: 0"
+
+[node name="ThoroughnessLabel" type="Label" parent="TestStuff/SearchLabels" unique_id=406495153]
+layout_mode = 2
+text = "Thoroughness: 0"
+
+[node name="SearchSuspicionLabel" type="Label" parent="TestStuff/SearchLabels" unique_id=84046074]
+layout_mode = 2
+text = "Searcher Suspicion: 0"
+
+[node name="TimeUI" type="PanelContainer" parent="." unique_id=405917292]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -145.0
+offset_top = -51.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+script = ExtResource("8_6je1u")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TimeUI" unique_id=193966098]
+layout_mode = 2
+alignment = 1
+
+[node name="DayLabel" type="Label" parent="TimeUI/VBoxContainer" unique_id=1885285340]
+layout_mode = 2
+text = "Weekday, "
+horizontal_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="TimeUI/VBoxContainer" unique_id=1331367607]
+layout_mode = 2
+text = "10:00"
+horizontal_alignment = 1
+
+[node name="GuestRoster" type="PanelContainer" parent="." unique_id=847879594]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = -114.0
+offset_right = -18.0
+offset_bottom = 99.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5bft6")
+script = ExtResource("10_5bft6")
+
+[node name="NotificationLabel" type="Label" parent="GuestRoster" unique_id=741412322]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GuestRoster" unique_id=170145400]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="GuestRoster/VBoxContainer" unique_id=222551747]
+layout_mode = 2
+text = "Guests"
+horizontal_alignment = 1
+
+[node name="RosterList" type="VBoxContainer" parent="GuestRoster/VBoxContainer" unique_id=12957530]
+layout_mode = 2
+
+[node name="InventoryUI" parent="." unique_id=1947418699 instance=ExtResource("11_lwdvj")]
+layout_mode = 1
+
+[connection signal="timeout" from="TimeManager/Timer" to="TimeManager" method="_on_timer_timeout"]
+[connection signal="timeout" from="StatusManager/StatusCheckTimer" to="StatusManager" method="_on_status_check_timer_timeout"]
+[connection signal="timeout" from="StatusManager/RecoveryDelayTimer" to="StatusManager" method="_on_recovery_delay_timeout"]
+[connection signal="pressed" from="TestStuff/TestHUD/StartRaid" to="TestStuff" method="_on_start_raid_pressed"]

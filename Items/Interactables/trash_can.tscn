@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://7231mpho8olk"]
+
+[ext_resource type="Script" uid="uid://d4dh0agt77b3k" path="res://Items/Interactables/trash_can.gd" id="1_qap62"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_a1pfb"]
+height = 1.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_a1pfb"]
+height = 0.28710938
+
+[node name="TrashCan" type="Area3D" unique_id=760818668]
+collision_layer = 17
+collision_mask = 16
+script = ExtResource("1_qap62")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=787127922]
+mesh = SubResource("CylinderMesh_a1pfb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=909661428]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3491211, 0)
+shape = SubResource("CylinderShape3D_a1pfb")

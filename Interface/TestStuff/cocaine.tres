@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bmahi1w8kf6yv"]
+
+[ext_resource type="Script" uid="uid://dwbtgkwya4a0e" path="res://Data/ItemData.gd" id="1_jxs23"]
+[ext_resource type="Texture2D" uid="uid://bif3lbyihceg0" path="res://Interface/TestStuff/test_item_spritesheet.png" id="2_80dwj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6o80"]
+atlas = ExtResource("2_80dwj")
+region = Rect2(320, 480, 32, 32)
+
+[resource]
+script = ExtResource("1_jxs23")
+name = "Cocaine"
+id = "cocaine"
+texture = SubResource("AtlasTexture_n6o80")
+description = "Forget your troubles"
+flavor_text = "My that's delightful"
+buy_value = 60.0
+sell_value = 180.0
+concealability = 4.5
+contraband_level = 4
+stackable = true
+useable = true
+metadata/_custom_type_script = "uid://dwbtgkwya4a0e"

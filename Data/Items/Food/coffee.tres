@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="ConsumableData" format=3 uid="uid://bkihuf3f23auk"]
+
+[ext_resource type="Script" uid="uid://dxnc4t0nsritt" path="res://Data/ConsumableData.gd" id="1_ky078"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f2bmk"]
+load_path = "res://.godot/imported/test_item_spritesheet.png-c5ac06154775a8149d0e2613b3dfede6.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ky078"]
+atlas = SubResource("CompressedTexture2D_f2bmk")
+region = Rect2(448, 480, 32, 32)
+
+[resource]
+script = ExtResource("1_ky078")
+effects = {
+"energy": 0.0,
+"hp": 2.0,
+"stress": 12.0
+}
+name = "Coffee"
+id = "coffee"
+texture = SubResource("AtlasTexture_ky078")
+description = "It's not much but it's better than nothing"
+buy_value = 8.2
+sell_value = 4.5
+concealability = 2.5
+stackable = true
+useable = true
+metadata/_custom_type_script = "uid://dxnc4t0nsritt"

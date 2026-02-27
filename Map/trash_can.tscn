@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c6fjk4hgs18ax"]
+
+[ext_resource type="PackedScene" uid="uid://cyqqart8rtujk" path="res://Map/trash_can.gltf" id="1_m0han"]
+[ext_resource type="PackedScene" uid="uid://crvyhmfo35o77" path="res://Map/Furniture-Fixtures/trash_can_public.gltf" id="2_mk0s0"]
+
+[node name="TrashCan" type="Node3D" unique_id=1560570724]
+
+[node name="trash_can" parent="." unique_id=1648681345 instance=ExtResource("1_m0han")]
+
+[node name="trash_can_public" parent="." unique_id=826069045 instance=ExtResource("2_mk0s0")]
+visible = false

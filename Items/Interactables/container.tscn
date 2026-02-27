@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bp6vi1mqo4n5a"]
+
+[ext_resource type="Script" uid="uid://mcdm8xr3sdvh" path="res://Items/Interactables/container.gd" id="1_b1gkk"]
+[ext_resource type="Script" uid="uid://8yo1utsr8bth" path="res://Items/Interactables/interactable.gd" id="2_am1ok"]
+[ext_resource type="Texture2D" uid="uid://bi1lgavhmkq5c" path="res://Interface/UI_icons.png" id="3_auuks"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qsp4k"]
+albedo_color = Color(1, 1, 0.39215687, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kq58d"]
+material = SubResource("StandardMaterial3D_qsp4k")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_seu75"]
+atlas = ExtResource("3_auuks")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x6s50"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b1gkk"]
+
+[node name="Container" type="StaticBody3D" unique_id=427099316]
+process_mode = 3
+script = ExtResource("1_b1gkk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=57309622]
+visible = false
+mesh = SubResource("BoxMesh_kq58d")
+
+[node name="Interactable" type="Area3D" parent="." unique_id=844407554 groups=["house_containers"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("2_am1ok")
+id = "container"
+interact_icon = SubResource("AtlasTexture_seu75")
+interact_text = "Open"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=595969542]
+shape = SubResource("BoxShape3D_x6s50")
+
+[node name="BodyCollision" type="CollisionShape3D" parent="." unique_id=1340977184]
+shape = SubResource("BoxShape3D_b1gkk")

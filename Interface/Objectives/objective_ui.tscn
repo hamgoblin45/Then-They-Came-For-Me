@@ -1,0 +1,186 @@
+[gd_scene load_steps=8 format=3 uid="uid://b4q0h7ka7r6wv"]
+
+[ext_resource type="Script" uid="uid://roly273byw5v" path="res://Interface/objective_ui.gd" id="1_gjltt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7d15p"]
+
+[sub_resource type="Animation" id="Animation_g7037"]
+resource_name = "show_highlight"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HighlightPanel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 0.53333336, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mid2l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HighlightPanel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TurnedInLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TurnedInLabel:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.8, 0.8)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarginContainer/ObjectiveVBox:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_tvc54"]
+resource_name = "turn_in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TurnedInLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.28, 1.26, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("TurnedInLabel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.71, 1.42),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.8, 0.8), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/ObjectiveVBox:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.4627451)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tvc54"]
+_data = {
+&"RESET": SubResource("Animation_mid2l"),
+&"show_highlight": SubResource("Animation_g7037"),
+&"turn_in": SubResource("Animation_tvc54")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g7037"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.906407, 0.7955145, 0.3865648, 1)
+border_blend = true
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="ObjectiveUI" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 64)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7d15p")
+script = ExtResource("1_gjltt")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ObjectiveVBox" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ObjectiveName" type="Label" parent="MarginContainer/ObjectiveVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Objective Name"
+
+[node name="ObjectiveDescription" type="RichTextLabel" parent="MarginContainer/ObjectiveVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "Test an objective"
+fit_content = true
+
+[node name="StepsContainer" type="VBoxContainer" parent="MarginContainer/ObjectiveVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_tvc54")
+}
+
+[node name="HighlightPanel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g7037")
+
+[node name="TurnedInLabel" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.92281955, 0.9179757, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.41960785)
+text = "TURNED IN!"
+horizontal_alignment = 1
+vertical_alignment = 1

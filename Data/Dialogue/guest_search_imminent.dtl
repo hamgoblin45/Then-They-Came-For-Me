@@ -1,0 +1,3 @@
+What's up?
+- They're coming, follow me!
+[signal arg_type="dict" arg="{"signal_name":"follow_player"}"]

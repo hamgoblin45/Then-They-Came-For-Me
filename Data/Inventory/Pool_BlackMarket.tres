@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="InventoryData" format=3 uid="uid://b476fxp3toyxi"]
+
+[ext_resource type="Script" uid="uid://crfuvv7qrrub3" path="res://Data/InventoryData.gd" id="1_ion7i"]
+[ext_resource type="Script" uid="uid://bg2a6tr7dx7cs" path="res://Data/InventorySlotData.gd" id="2_ltfed"]
+[ext_resource type="Resource" uid="uid://jo0gq5u6e4hl" path="res://Data/Items/Misc/parody_movie.tres" id="4_aukhg"]
+[ext_resource type="Resource" uid="uid://crvqwhmlb552o" path="res://Data/Items/Equippables/rifle.tres" id="5_1sr0r"]
+[ext_resource type="Resource" uid="uid://ib385dgptwrd" path="res://Data/Items/Food/wine.tres" id="6_wqchh"]
+[ext_resource type="Resource" uid="uid://bmahi1w8kf6yv" path="res://Interface/TestStuff/cocaine.tres" id="7_k5ur8"]
+
+[sub_resource type="Resource" id="Resource_hckvf"]
+script = ExtResource("2_ltfed")
+item_data = ExtResource("4_aukhg")
+metadata/_custom_type_script = "uid://bg2a6tr7dx7cs"
+
+[sub_resource type="Resource" id="Resource_03v0o"]
+script = ExtResource("2_ltfed")
+item_data = ExtResource("5_1sr0r")
+metadata/_custom_type_script = "uid://bg2a6tr7dx7cs"
+
+[sub_resource type="Resource" id="Resource_pq00b"]
+script = ExtResource("2_ltfed")
+item_data = ExtResource("6_wqchh")
+metadata/_custom_type_script = "uid://bg2a6tr7dx7cs"
+
+[sub_resource type="Resource" id="Resource_cud5k"]
+script = ExtResource("2_ltfed")
+item_data = ExtResource("7_k5ur8")
+metadata/_custom_type_script = "uid://bg2a6tr7dx7cs"
+
+[resource]
+script = ExtResource("1_ion7i")
+slots = Array[ExtResource("2_ltfed")]([SubResource("Resource_hckvf"), SubResource("Resource_03v0o"), SubResource("Resource_pq00b"), SubResource("Resource_cud5k")])
+metadata/_custom_type_script = "uid://crfuvv7qrrub3"

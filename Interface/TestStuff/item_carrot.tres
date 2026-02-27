@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="InventoryItemData" format=3 uid="uid://bu7k1xa16ud57"]
+
+[ext_resource type="Script" uid="uid://dwbtgkwya4a0e" path="res://Data/ItemData.gd" id="1_kgtr7"]
+[ext_resource type="Texture2D" uid="uid://c8ptw3jtdkmqe" path="res://Interface/TestStuff/test_atlas_texture.tres" id="2_75sg4"]
+
+[resource]
+script = ExtResource("1_kgtr7")
+name = "Carrot"
+id = "carrot"
+texture = ExtResource("2_75sg4")
+description = "Tis but a carrot."
+buy_value = 2.0
+sell_value = 1.0
+concealability = 4.0
+stackable = true
+useable = true
+metadata/_custom_type_script = "uid://dwbtgkwya4a0e"

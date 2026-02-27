@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cokdko33hqlj1"]
+
+[ext_resource type="Script" uid="uid://cc7yystdecj2t" path="res://Map/hiding_spot.gd" id="1_heltn"]
+[ext_resource type="Texture2D" uid="uid://bi1lgavhmkq5c" path="res://Interface/UI_icons.png" id="2_53urs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yv7is"]
+atlas = ExtResource("2_53urs")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x6s50"]
+
+[node name="HidingSpot" type="Area3D" unique_id=85300068 groups=["hiding_spots"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_heltn")
+interact_icon = SubResource("AtlasTexture_yv7is")
+interact_text = "Hide Here"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1822048844]
+shape = SubResource("BoxShape3D_x6s50")

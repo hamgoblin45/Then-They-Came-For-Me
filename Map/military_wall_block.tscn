@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cbxnnbyabl534"]
+
+[ext_resource type="PackedScene" uid="uid://bab8o5x0iodt0" path="res://Map/military_wall_block.gltf" id="1_5xau8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a4kmt"]
+size = Vector3(1.9880371, 1.9023972, 1.9912109)
+
+[node name="MilitaryWallBlock" unique_id=106517638 instance=ExtResource("1_5xau8")]
+
+[node name="MilitaryWallBlock" parent="." index="0" unique_id=1321716053]
+transform = Transform3D(6.5, 0, 0, 0, 6.5, 0, 0, 0, 6.5, 0, 6.558763, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=761564592]
+transform = Transform3D(6.5, 0, 0, 0, 6.5, 0, 0, 0, 6.5, 0, 4.7001266, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1725160420]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, 0.31560898, 0)
+shape = SubResource("BoxShape3D_a4kmt")

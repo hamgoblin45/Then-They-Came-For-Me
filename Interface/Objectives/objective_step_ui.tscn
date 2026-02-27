@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://btcdsfmx1knfj"]
+
+[ext_resource type="Script" uid="uid://cnn3o8sncfur3" path="res://Interface/objective_step_ui.gd" id="1_tpfsw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ygxj"]
+
+[node name="ObjectiveStepUI" type="PanelContainer"]
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0ygxj")
+script = ExtResource("1_tpfsw")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_right = 18
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="StepLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 14
+theme_override_font_sizes/bold_font_size = 14
+theme_override_font_sizes/bold_italics_font_size = 14
+theme_override_font_sizes/italics_font_size = 14
+theme_override_font_sizes/mono_font_size = 14
+bbcode_enabled = true
+text = "Step Label"
+fit_content = true
+
+[node name="StepProgressLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 14
+theme_override_font_sizes/bold_font_size = 14
+theme_override_font_sizes/bold_italics_font_size = 14
+theme_override_font_sizes/italics_font_size = 14
+theme_override_font_sizes/mono_font_size = 14
+bbcode_enabled = true
+text = "[right]0/10"
+fit_content = true

@@ -1,0 +1,5 @@
+Anything else?
+- No thanks
+	[signal arg_type="dict" arg="{"signal_name":"visitor_leave"}"]
+- Actually, yes
+	[signal arg_type="dict" arg="{"shop_inventory":"res://Data/Inventory/Pool_BlackMarket.tres","signal_name":"open_shop"}"]

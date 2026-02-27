@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://btcbf58h7yvlx"]
+
+[ext_resource type="Script" uid="uid://b0eit112u3yr3" path="res://Map/sky/DayNightCycle.gd" id="1_vxjp2"]
+[ext_resource type="Material" uid="uid://dh6ykun8bv60u" path="res://Map/sky/examples/day_sky.tres" id="2_t2ff6"]
+
+[sub_resource type="Gradient" id="Gradient_pmrgb"]
+offsets = PackedFloat32Array(0, 0.3, 0.7, 1)
+colors = PackedColorArray(0.90287, 0.414364, 0.00684111, 1, 0.9588874, 0.95627254, 0.91337276, 1, 0.9607843, 0.95686275, 0.9137255, 1, 0.901961, 0.415686, 0.00784314, 1)
+
+[sub_resource type="Curve" id="Curve_e2x23"]
+_data = [Vector2(0.195853, 0), 0.0, 0.0, 0, 0, Vector2(0.29421765, 0.8628297), 0.0, 0.0, 0, 0, Vector2(0.7023809, 0.8628297), 0.0, 0.0, 0, 0, Vector2(0.804147, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_bnat2"]
+offsets = PackedFloat32Array(0.979167)
+colors = PackedColorArray(0.145628, 0.12149, 0.430849, 1)
+
+[sub_resource type="Curve" id="Curve_33i7a"]
+_data = [Vector2(0, 0.31414866), 0.0, 0.0, 0, 0, Vector2(0.251152, 0), 0.0, 0.0, 0, 0, Vector2(0.748848, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.30167866), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_6r5st"]
+offsets = PackedFloat32Array(0.18681319, 0.31135532, 0.45787546, 0.63736266, 0.9, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.267392, 0.0586128, 0.449922, 1, 0.192839, 0.463554, 0.69457, 1, 0.192157, 0.462745, 0.694118, 1, 0.266667, 0.0588235, 0.45098, 1, 0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_twtk7"]
+offsets = PackedFloat32Array(0.21245421, 0.2783883, 0.31135532, 0.34065935, 0.4065934, 0.64468867, 0.75, 0.85714287, 0.93772894, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.267392, 0.0586128, 0.449922, 1, 0.267392, 0.0586128, 0.449922, 1, 0.548533, 0.295885, 0.198798, 1, 0.192839, 0.463554, 0.69457, 1, 0.192157, 0.462745, 0.694118, 1, 0.54902, 0.294118, 0.2, 1, 0.266667, 0.0588235, 0.45098, 1, 0.266667, 0.0588235, 0.45098, 1, 0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_t2ff6"]
+offsets = PackedFloat32Array(0.1978022, 0.34798536, 0.42124543, 0.5494506, 0.6923077, 0.7582418, 0.7838828)
+colors = PackedColorArray(0.028345102, 0.002294596, 0.07394066, 1, 0.87537503, 0.8733926, 0.74860746, 1, 0.43486142, 0.64465374, 0.797676, 1, 0.5455961, 0.73265535, 0.892241, 1, 0.62152845, 0.79299927, 0.95708555, 1, 0.52397627, 0.1796442, 0.25120902, 1, 0, 0, 0, 1)
+
+[sub_resource type="Sky" id="Sky_ieg05"]
+sky_material = ExtResource("2_t2ff6")
+
+[sub_resource type="Environment" id="Environment_1eoep"]
+background_mode = 2
+sky = SubResource("Sky_ieg05")
+ambient_light_sky_contribution = 0.25
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.31117395, 0.54233754, 0.9188102, 1)
+fog_density = 0.8
+fog_sky_affect = 0.2
+fog_depth_curve = 2.000001
+fog_depth_end = 500.0
+
+[node name="DayNightCycle" type="Node3D" unique_id=1284613764]
+process_mode = 1
+script = ExtResource("1_vxjp2")
+sun_color = SubResource("Gradient_pmrgb")
+sun_intensity = SubResource("Curve_e2x23")
+moon_color = SubResource("Gradient_bnat2")
+moon_intensity = SubResource("Curve_33i7a")
+sky_top_color = SubResource("Gradient_6r5st")
+sky_horizon_color = SubResource("Gradient_twtk7")
+cloud_light_color = SubResource("Gradient_t2ff6")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1526717588]
+transform = Transform3D(0.988054, 0.0927073, 0.123103, -0.154107, 0.594392, 0.789272, 6.57169e-09, -0.798814, 0.601578, 0, 9.45001, 0)
+light_volumetric_fog_energy = 1.5
+light_specular = 0.75
+shadow_enabled = true
+shadow_opacity = 0.75
+
+[node name="Moon" type="DirectionalLight3D" parent="." unique_id=1920913177]
+transform = Transform3D(0.988054, 0.0927073, 0.123103, -0.154107, 0.594392, 0.789272, 6.57169e-09, -0.798814, 0.601578, 0, 9.45001, 0)
+shadow_enabled = true
+sky_mode = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=1776241812]
+wait_time = 0.1
+autostart = true
+
+[node name="Sky" type="Node3D" parent="." unique_id=872673801]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Sky" unique_id=1154141189]
+environment = SubResource("Environment_1eoep")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

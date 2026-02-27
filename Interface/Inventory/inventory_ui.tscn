@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://dhpfeub82th3n"]
+
+[ext_resource type="Script" uid="uid://1exja7h0qfdn" path="res://Interface/Inventory/InventoryUI.gd" id="1_xywkj"]
+[ext_resource type="Script" uid="uid://jremvvcffik8" path="res://Scripts/Managers/InventoryManager.gd" id="2_3xrn1"]
+[ext_resource type="Script" uid="uid://crfuvv7qrrub3" path="res://Data/InventoryData.gd" id="3_gur8t"]
+[ext_resource type="PackedScene" uid="uid://bmqlxplie777" path="res://Interface/Inventory/pockets_inventory_ui.tscn" id="4_3y5k6"]
+[ext_resource type="Script" uid="uid://bg2a6tr7dx7cs" path="res://Data/InventorySlotData.gd" id="4_c0f0r"]
+[ext_resource type="PackedScene" uid="uid://wkm6jgcm5mys" path="res://Interface/Inventory/external_inventory.tscn" id="5_gur8t"]
+[ext_resource type="Resource" uid="uid://371084472b42" path="res://Data/Items/Equippables/hammer.tres" id="5_p4sp8"]
+[ext_resource type="Resource" uid="uid://ijbovam7ggbb" path="res://Data/Items/Food/steak.tres" id="6_8c4yq"]
+[ext_resource type="PackedScene" uid="uid://cb06vgbnsed6c" path="res://Interface/Inventory/grabbed_slot_ui.tscn" id="9_c0f0r"]
+[ext_resource type="PackedScene" uid="uid://cbsuhe7my4ttl" path="res://Interface/Inventory/Shop/shop_ui.tscn" id="11_hvb16"]
+[ext_resource type="Script" uid="uid://bya0l8x7gtw7q" path="res://Interface/notication_control.gd" id="15_sxlab"]
+
+[sub_resource type="Resource" id="Resource_oli18"]
+script = ExtResource("4_c0f0r")
+item_data = ExtResource("5_p4sp8")
+metadata/_custom_type_script = "uid://bg2a6tr7dx7cs"
+
+[sub_resource type="Resource" id="Resource_jfwpd"]
+script = ExtResource("4_c0f0r")
+item_data = ExtResource("6_8c4yq")
+quantity = 4
+metadata/_custom_type_script = "uid://bg2a6tr7dx7cs"
+
+[sub_resource type="Resource" id="Resource_xywkj"]
+script = ExtResource("3_gur8t")
+slots = Array[ExtResource("4_c0f0r")]([SubResource("Resource_oli18"), SubResource("Resource_jfwpd"), null, null, null, null])
+metadata/_custom_type_script = "uid://crfuvv7qrrub3"
+
+[node name="InventoryUI" type="Control" unique_id=1947418699]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_xywkj")
+
+[node name="InventoryManager" type="Node" parent="." unique_id=156204402]
+script = ExtResource("2_3xrn1")
+pockets_inventory_data = SubResource("Resource_xywkj")
+
+[node name="GrabTimer" type="Timer" parent="InventoryManager" unique_id=1412632500]
+unique_name_in_owner = true
+wait_time = 0.5
+one_shot = true
+
+[node name="PocketsInventoryUI" parent="." unique_id=1834282051 instance=ExtResource("4_3y5k6")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+offset_left = 0.0
+offset_top = 461.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_vertical = 2
+
+[node name="ExternalInventoryUI" parent="." unique_id=467885479 instance=ExtResource("5_gur8t")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 171.0
+offset_top = -24.5
+offset_right = 709.0
+offset_bottom = 216.5
+grow_vertical = 2
+
+[node name="ShopUI" parent="." unique_id=1314536890 instance=ExtResource("11_hvb16")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 275.0
+offset_top = 284.0
+offset_right = 861.0
+offset_bottom = 545.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="GrabbedSlotUI" parent="." unique_id=440725332 instance=ExtResource("9_c0f0r")]
+unique_name_in_owner = true
+top_level = true
+layout_mode = 0
+
+[node name="NoticationControl" type="Control" parent="." unique_id=824063845]
+clip_contents = true
+anchors_preset = 0
+offset_right = 249.0
+offset_bottom = 221.0
+mouse_filter = 2
+script = ExtResource("15_sxlab")
+
+[node name="NotificationContainer" type="VBoxContainer" parent="NoticationControl" unique_id=903039219]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[connection signal="timeout" from="InventoryManager/GrabTimer" to="InventoryManager" method="_on_grab_timer_timeout"]

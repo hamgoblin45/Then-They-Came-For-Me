@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bvm1rgwdwsai0"]
+
+[ext_resource type="Script" uid="uid://0gvfijpq5qdy" path="res://Items/Interactables/Grabbables/grabbable.gd" id="1_wy3xl"]
+[ext_resource type="Script" uid="uid://8yo1utsr8bth" path="res://Items/Interactables/interactable.gd" id="2_6qglb"]
+[ext_resource type="Texture2D" uid="uid://dtysfm7paobyb" path="res://Interface/icon_atlas.tres" id="3_rwfkp"]
+[ext_resource type="PackedScene" uid="uid://baot8cx26xrnf" path="res://Items/Meshes/coffee_cup.gltf" id="4_sfx85"]
+[ext_resource type="Material" uid="uid://c3rhvr6bla26v" path="res://Shaders/interact_outline_shader_material.tres" id="5_4nq8u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2uhas"]
+size = Vector3(0.33496094, 0.44506836, 0.4885254)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5vw27"]
+size = Vector3(0.24438477, 0.45837402, 0.25219727)
+
+[node name="Cup" type="RigidBody3D" unique_id=947665299 node_paths=PackedStringArray("interact_area")]
+lock_rotation = true
+script = ExtResource("1_wy3xl")
+id = "cup"
+interact_area = NodePath("Interactable")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=390098314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22616684, 0)
+shape = SubResource("BoxShape3D_2uhas")
+
+[node name="Interactable" type="Area3D" parent="." unique_id=879881382]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_6qglb")
+id = "cup"
+interact_icon = ExtResource("3_rwfkp")
+interact_text = "GRAB"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1073181511]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22576904, 0)
+shape = SubResource("BoxShape3D_5vw27")
+
+[node name="coffee_cup" parent="." unique_id=204260638 instance=ExtResource("4_sfx85")]
+
+[node name="Cylinder" parent="coffee_cup" index="0"]
+material_overlay = ExtResource("5_4nq8u")
+
+[editable path="coffee_cup"]

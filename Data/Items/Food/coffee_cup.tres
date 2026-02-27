@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://xnc5ytkpto04"]
+
+[ext_resource type="Script" uid="uid://dwbtgkwya4a0e" path="res://Data/ItemData.gd" id="1_ge64n"]
+[ext_resource type="PackedScene" uid="uid://baot8cx26xrnf" path="res://Items/Meshes/coffee_cup.gltf" id="1_re40b"]
+[ext_resource type="Texture2D" uid="uid://bif3lbyihceg0" path="res://Interface/TestStuff/test_item_spritesheet.png" id="2_re40b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0hq4"]
+atlas = ExtResource("2_re40b")
+region = Rect2(96, 352, 32, 32)
+
+[resource]
+script = ExtResource("1_ge64n")
+name = "Cup of Coffee"
+id = "coffee_cup"
+texture = SubResource("AtlasTexture_m0hq4")
+description = "Coffee"
+flavor_text = "Sounds like heaven"
+buy_value = 10.0
+sell_value = 5.0
+concealability = 0.5
+equipped_scene = ExtResource("1_re40b")
+metadata/_custom_type_script = "uid://dwbtgkwya4a0e"

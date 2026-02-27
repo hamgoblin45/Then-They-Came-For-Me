@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItemData" load_steps=2 format=3 uid="uid://dabk6755bi4j"]
+
+[ext_resource type="Script" uid="uid://bu00q3p03457u" path="res://Data/InventoryItemData.gd" id="1_3nctk"]
+
+[resource]
+script = ExtResource("1_3nctk")
+name = "Unrelated Item"
+id = "unrelated_item"
+metadata/_custom_type_script = "uid://bu00q3p03457u"

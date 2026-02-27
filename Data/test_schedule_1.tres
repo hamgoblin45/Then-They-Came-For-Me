@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ScheduleData" format=3 uid="uid://325mofd5d5s"]
+
+[ext_resource type="Script" uid="uid://p0yiwd1penmr" path="res://Data/ScheduleData.gd" id="1_d3m3l"]
+[ext_resource type="Resource" uid="uid://beeqeykgobv6h" path="res://Data/test_path_1.tres" id="1_hgipp"]
+
+[resource]
+script = ExtResource("1_d3m3l")
+hourly_routine = {
+"18:25": ExtResource("1_hgipp")
+}
+metadata/_custom_type_script = "uid://p0yiwd1penmr"

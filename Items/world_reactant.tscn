@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cgqgs8qinx2f3"]
+
+[ext_resource type="Script" uid="uid://bfh0x2qt5tog7" path="res://Scripts/Managers/WorldReactant.gd" id="1_006gv"]
+
+[node name="Node3D" type="Node3D" unique_id=1188881926]
+script = ExtResource("1_006gv")

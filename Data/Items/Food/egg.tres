@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="ConsumableData" format=3 uid="uid://c13wc1u5p42sr"]
+
+[ext_resource type="Script" uid="uid://dxnc4t0nsritt" path="res://Data/ConsumableData.gd" id="1_738bs"]
+[ext_resource type="Texture2D" uid="uid://bif3lbyihceg0" path="res://Interface/TestStuff/test_item_spritesheet.png" id="2_bhykm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_738bs"]
+atlas = ExtResource("2_bhykm")
+region = Rect2(192, 480, 32, 32)
+
+[resource]
+script = ExtResource("1_738bs")
+effects = {
+"energy": 18.0,
+"hp": 8.0,
+"satiety": 0.0
+}
+name = "Egg"
+id = "egg"
+texture = SubResource("AtlasTexture_738bs")
+description = "It's not much but it's better than nothing"
+buy_value = 5.0
+sell_value = 2.0
+concealability = 3.5
+stackable = true
+useable = true
+metadata/_custom_type_script = "uid://dxnc4t0nsritt"

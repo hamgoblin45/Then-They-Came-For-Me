@@ -1,0 +1,5 @@
+Welcome, what can I get for you?
+- Nevermind
+	Don't waste my time.
+- Let me see your stock
+	[signal arg_type="dict" arg="{"shop_inventory":"res://Data/Inventory/Pool_Commissary.tres","signal_name":"open_shop"}"]

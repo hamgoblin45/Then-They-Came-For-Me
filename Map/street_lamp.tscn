@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://6ouvs2gcmubk"]
+
+[ext_resource type="PackedScene" uid="uid://c6qyy1sugi6rx" path="res://Map/street_lamp_1.gltf" id="1_xivnd"]
+
+[node name="StreetLamp" type="Node3D" unique_id=2057073631]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+
+[node name="street_lamp_1" parent="." unique_id=236653970 instance=ExtResource("1_xivnd")]

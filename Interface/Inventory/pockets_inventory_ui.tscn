@@ -1,0 +1,267 @@
+[gd_scene format=3 uid="uid://bmqlxplie777"]
+
+[ext_resource type="Script" uid="uid://cmfnyi8auyirc" path="res://Interface/Inventory/pockets_inventory_ui.gd" id="1_x7uns"]
+[ext_resource type="Texture2D" uid="uid://bi1lgavhmkq5c" path="res://Interface/UI_icons.png" id="4_v3qyw"]
+[ext_resource type="Texture2D" uid="uid://bif3lbyihceg0" path="res://Interface/TestStuff/test_item_spritesheet.png" id="4_wcso4"]
+[ext_resource type="Script" uid="uid://bi8gfy8qlexw5" path="res://Interface/Inventory/item_context_ui.gd" id="5_lwv56"]
+[ext_resource type="Script" uid="uid://coyexc2fjsnd0" path="res://Interface/Inventory/split_stack_ui.gd" id="6_phiob"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_grx8j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v3qyw"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.23362625, 0.22156253, 0.20346862, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdfb2"]
+atlas = ExtResource("4_v3qyw")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xywkj"]
+bg_color = Color(0.18431373, 0.17254902, 0.13725491, 1)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvb16"]
+atlas = ExtResource("4_wcso4")
+region = Rect2(224, 384, 32, 32)
+
+[node name="PocketsInventoryUI" type="Control" unique_id=1013353882]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -572.0
+offset_top = -192.0
+offset_right = 572.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+script = ExtResource("1_x7uns")
+
+[node name="SlotsPanel" type="PanelContainer" parent="." unique_id=1378227325]
+layout_mode = 0
+offset_left = 364.0
+offset_top = 111.0
+offset_right = 780.0
+offset_bottom = 177.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_grx8j")
+
+[node name="PocketSlotContainer" type="GridContainer" parent="SlotsPanel" unique_id=340958007]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 6
+
+[node name="ContextControl" type="Control" parent="." unique_id=800401041]
+anchors_preset = 0
+offset_left = 791.0
+offset_top = 42.0
+offset_right = 968.0
+offset_bottom = 180.0
+mouse_filter = 2
+
+[node name="PocketItemContextUI" type="PanelContainer" parent="ContextControl" unique_id=446189424 node_paths=PackedStringArray("item_name", "item_descript", "item_flavor_text", "trash_button", "use_button", "split_button", "drop_button")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -87.5
+offset_top = -171.0
+offset_right = 87.5
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(85, 186)
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_v3qyw")
+script = ExtResource("5_lwv56")
+item_name = NodePath("VBoxContainer/ItemName")
+item_descript = NodePath("VBoxContainer/ItemDescript")
+item_flavor_text = NodePath("VBoxContainer/ItemFlavorText")
+trash_button = NodePath("VBoxContainer/ButtonContainer/TrashButton")
+use_button = NodePath("VBoxContainer/ButtonContainer/UseButton")
+split_button = NodePath("VBoxContainer/ButtonContainer/SplitButton")
+drop_button = NodePath("VBoxContainer/ButtonContainer/DropButton")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ContextControl/PocketItemContextUI" unique_id=627261701]
+layout_mode = 2
+size_flags_vertical = 0
+alignment = 1
+
+[node name="ItemName" type="Label" parent="ContextControl/PocketItemContextUI/VBoxContainer" unique_id=1821370604]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45080644, 0.603062, 0.86143565, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.54509807)
+theme_override_constants/shadow_outline_size = 2
+text = "ItemName"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ItemDescript" type="RichTextLabel" parent="ContextControl/PocketItemContextUI/VBoxContainer" unique_id=1950884434]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.4392157)
+theme_override_font_sizes/normal_font_size = 13
+theme_override_font_sizes/bold_font_size = 13
+theme_override_font_sizes/bold_italics_font_size = 13
+theme_override_font_sizes/italics_font_size = 13
+theme_override_font_sizes/mono_font_size = 13
+bbcode_enabled = true
+text = "[center]This is the [color=gold] item [/color] description"
+fit_content = true
+
+[node name="ItemFlavorText" type="RichTextLabel" parent="ContextControl/PocketItemContextUI/VBoxContainer" unique_id=861155340]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.2784314)
+theme_override_font_sizes/normal_font_size = 11
+theme_override_font_sizes/bold_font_size = 11
+theme_override_font_sizes/bold_italics_font_size = 11
+theme_override_font_sizes/italics_font_size = 11
+theme_override_font_sizes/mono_font_size = 11
+bbcode_enabled = true
+text = "[i]This is some lore description to add flavor text to a description"
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContextControl/PocketItemContextUI/VBoxContainer" unique_id=345810286]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="MoneySymbol" type="TextureRect" parent="ContextControl/PocketItemContextUI/VBoxContainer/HBoxContainer" unique_id=1880719940]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+texture = SubResource("AtlasTexture_kdfb2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ItemValue" type="Label" parent="ContextControl/PocketItemContextUI/VBoxContainer/HBoxContainer" unique_id=307381048]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+
+[node name="ButtonContainer" type="GridContainer" parent="ContextControl/PocketItemContextUI/VBoxContainer" unique_id=1965881384]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+columns = 2
+
+[node name="TrashButton" type="Button" parent="ContextControl/PocketItemContextUI/VBoxContainer/ButtonContainer" unique_id=762215035]
+unique_name_in_owner = true
+layout_mode = 2
+text = "TRASH"
+
+[node name="DropButton" type="Button" parent="ContextControl/PocketItemContextUI/VBoxContainer/ButtonContainer" unique_id=394733150]
+unique_name_in_owner = true
+layout_mode = 2
+text = "DROP"
+
+[node name="UseButton" type="Button" parent="ContextControl/PocketItemContextUI/VBoxContainer/ButtonContainer" unique_id=1076012156]
+unique_name_in_owner = true
+layout_mode = 2
+text = "USE"
+
+[node name="SplitButton" type="Button" parent="ContextControl/PocketItemContextUI/VBoxContainer/ButtonContainer" unique_id=1277731592]
+unique_name_in_owner = true
+layout_mode = 2
+text = "SPLIT"
+
+[node name="PocketsSplitStackUI" type="PanelContainer" parent="ContextControl/PocketItemContextUI" unique_id=87827884]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_xywkj")
+script = ExtResource("6_phiob")
+
+[node name="MarginContainer" type="MarginContainer" parent="ContextControl/PocketItemContextUI/PocketsSplitStackUI" unique_id=976992661]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ContextControl/PocketItemContextUI/PocketsSplitStackUI/MarginContainer" unique_id=1795022239]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContextControl/PocketItemContextUI/PocketsSplitStackUI/MarginContainer/VBoxContainer" unique_id=389486200]
+layout_mode = 2
+alignment = 1
+
+[node name="SplitSlider" type="HSlider" parent="ContextControl/PocketItemContextUI/PocketsSplitStackUI/MarginContainer/VBoxContainer/HBoxContainer" unique_id=326133785]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="SplitQty" type="Label" parent="ContextControl/PocketItemContextUI/PocketsSplitStackUI/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1037799431]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "X/XX"
+horizontal_alignment = 1
+
+[node name="SplitButton" type="Button" parent="ContextControl/PocketItemContextUI/PocketsSplitStackUI/MarginContainer/VBoxContainer" unique_id=1949864219]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 1
+text = "Split"
+
+[node name="MoneyRow" type="HBoxContainer" parent="." unique_id=1998854684]
+layout_mode = 0
+offset_top = 153.0
+offset_right = 1144.0
+offset_bottom = 177.0
+size_flags_vertical = 8
+mouse_filter = 2
+
+[node name="MoneyIcon" type="TextureRect" parent="MoneyRow" unique_id=1288379718]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = SubResource("AtlasTexture_hvb16")
+expand_mode = 1
+
+[node name="MoneyValue" type="Label" parent="MoneyRow" unique_id=1359267461]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "0"
+
+[connection signal="mouse_entered" from="ContextControl/PocketItemContextUI" to="ContextControl/PocketItemContextUI" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ContextControl/PocketItemContextUI" to="ContextControl/PocketItemContextUI" method="_on_mouse_exited"]
+[connection signal="pressed" from="ContextControl/PocketItemContextUI/VBoxContainer/ButtonContainer/TrashButton" to="ContextControl/PocketItemContextUI" method="_on_trash_button_pressed"]
+[connection signal="pressed" from="ContextControl/PocketItemContextUI/VBoxContainer/ButtonContainer/DropButton" to="ContextControl/PocketItemContextUI" method="_on_drop_button_pressed"]
+[connection signal="pressed" from="ContextControl/PocketItemContextUI/VBoxContainer/ButtonContainer/UseButton" to="ContextControl/PocketItemContextUI" method="_on_use_button_pressed"]
+[connection signal="pressed" from="ContextControl/PocketItemContextUI/VBoxContainer/ButtonContainer/SplitButton" to="ContextControl/PocketItemContextUI" method="_on_split_button_pressed"]
+[connection signal="mouse_entered" from="ContextControl/PocketItemContextUI/PocketsSplitStackUI" to="ContextControl/PocketItemContextUI/PocketsSplitStackUI" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ContextControl/PocketItemContextUI/PocketsSplitStackUI" to="ContextControl/PocketItemContextUI/PocketsSplitStackUI" method="_on_mouse_exited"]
+[connection signal="value_changed" from="ContextControl/PocketItemContextUI/PocketsSplitStackUI/MarginContainer/VBoxContainer/HBoxContainer/SplitSlider" to="ContextControl/PocketItemContextUI/PocketsSplitStackUI" method="_on_split_slider_value_changed"]
+[connection signal="pressed" from="ContextControl/PocketItemContextUI/PocketsSplitStackUI/MarginContainer/VBoxContainer/SplitButton" to="ContextControl/PocketItemContextUI/PocketsSplitStackUI" method="_on_split_button_pressed"]

@@ -1,0 +1,9 @@
+major: Good day. We are here to search you and your home for contraband and fugitives.
+if {} == true:
+	major: A little bird told us you might have something interesting for us...
+- Come on in
+	major: Your compliance is appreciated.
+- You can't come in
+	set {GameState.suspicion} += 2.0
+	major: It's not up to you. What's the matter? Hiding something?
+	major: Now spread your arms and stand still. We'll begin with a frisk.

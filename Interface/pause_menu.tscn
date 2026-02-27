@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://cjg0x4uo3ro86"]
+
+[ext_resource type="Script" uid="uid://g5ytqrwkw6ld" path="res://Interface/pause_menu.gd" id="1_jc1on"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=1594611318]
+process_mode = 3
+script = ExtResource("1_jc1on")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1522114771]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08235294, 0.08235294, 0.08235294, 0.5882353)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1382271768]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainPanel" type="VBoxContainer" parent="MarginContainer" unique_id=905999110]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="PausedLabel" type="Label" parent="MarginContainer/MainPanel" unique_id=69852824]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "PAUSED"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/MainPanel" unique_id=887706955]
+layout_mode = 2
+
+[node name="ResumeButton" type="Button" parent="MarginContainer/MainPanel" unique_id=1073367004]
+layout_mode = 2
+text = "RESUME"
+
+[node name="OptionsButton" type="Button" parent="MarginContainer/MainPanel" unique_id=1207009012]
+layout_mode = 2
+text = "OPTIONS"
+
+[node name="QuitToMenuButton" type="Button" parent="MarginContainer/MainPanel" unique_id=1910479918]
+layout_mode = 2
+text = "QUIT TO MENU"
+
+[node name="QuitToDesktopButton" type="Button" parent="MarginContainer/MainPanel" unique_id=7938517]
+layout_mode = 2
+text = "QUIT TO DESKTOP"
+
+[node name="OptionsPanel" type="VBoxContainer" parent="MarginContainer" unique_id=337048825]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="OptionsLabel" type="Label" parent="MarginContainer/OptionsPanel" unique_id=929492362]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "- OPTIONS -"
+horizontal_alignment = 1
+
+[node name="MasterVolumeLabel" type="Label" parent="MarginContainer/OptionsPanel" unique_id=1411078208]
+layout_mode = 2
+text = "Master Volume"
+horizontal_alignment = 1
+
+[node name="MasterVolumeSlider" type="HSlider" parent="MarginContainer/OptionsPanel" unique_id=1759581179]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/OptionsPanel" unique_id=190330597]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="MarginContainer/OptionsPanel" unique_id=2110268926]
+layout_mode = 2
+text = "BACK"

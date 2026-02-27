@@ -1,0 +1,9 @@
+This is to test the dialogue system. There should be no character assigned here.
+character: Now, what do you want to do?
+- Kick ME in the balls
+	character: Um, okay!
+	[signal arg_type="dict" arg="{"signal_name":"kick_balls"}"]
+- Make sweet love to you
+	Mmm, pound me grandpa!
+- Show me a pic
+	[signal arg_type="dict" arg="{"image_path":"res://icon.svg","signal_name":"show_image"}"]

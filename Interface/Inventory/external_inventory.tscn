@@ -1,0 +1,201 @@
+[gd_scene format=3 uid="uid://wkm6jgcm5mys"]
+
+[ext_resource type="Script" uid="uid://ddtw01iqjw1hk" path="res://Interface/Inventory/external_inventory.gd" id="1_j51ov"]
+[ext_resource type="StyleBox" uid="uid://cu8wrnw314hjl" path="res://Interface/Styles/InventoryPanelStyle.tres" id="2_uwpdy"]
+[ext_resource type="Script" uid="uid://bi8gfy8qlexw5" path="res://Interface/Inventory/item_context_ui.gd" id="4_5nhhn"]
+[ext_resource type="Script" uid="uid://coyexc2fjsnd0" path="res://Interface/Inventory/split_stack_ui.gd" id="6_hiijg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pjc3g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pjc3g"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.18431373, 0.17254902, 0.13725491, 0.5411765)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xywkj"]
+bg_color = Color(0.18431373, 0.17254902, 0.13725491, 1)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+
+[node name="ExternalInventory" type="PanelContainer" unique_id=470250402]
+custom_minimum_size = Vector2(304, 0)
+offset_left = 16.0
+offset_top = 225.0
+offset_right = 572.0
+offset_bottom = 418.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_pjc3g")
+script = ExtResource("1_j51ov")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1830612909]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1737407411]
+layout_mode = 2
+alignment = 2
+
+[node name="ExternalNameLabel" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=478076375]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.49803922)
+theme_override_font_sizes/font_size = 20
+text = "CONTAINER"
+horizontal_alignment = 1
+
+[node name="SlotsPanel" type="PanelContainer" parent="HBoxContainer/VBoxContainer" unique_id=1649064891]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_uwpdy")
+
+[node name="ExternalSlotContainer" type="GridContainer" parent="HBoxContainer/VBoxContainer/SlotsPanel" unique_id=2125358975]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 4
+
+[node name="ExternalItemContextUI" type="PanelContainer" parent="HBoxContainer" unique_id=283729632 node_paths=PackedStringArray("item_name", "item_descript", "item_flavor_text", "trash_button", "use_button", "split_button", "drop_button")]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_pjc3g")
+script = ExtResource("4_5nhhn")
+item_name = NodePath("MarginContainer/VBoxContainer/ItemName")
+item_descript = NodePath("MarginContainer/VBoxContainer/ItemDescript")
+item_flavor_text = NodePath("MarginContainer/VBoxContainer/ItemFlavorText")
+trash_button = NodePath("MarginContainer/VBoxContainer/ButtonContainer/TrashButton")
+use_button = NodePath("MarginContainer/VBoxContainer/ButtonContainer/UseButton")
+split_button = NodePath("MarginContainer/VBoxContainer/ButtonContainer/SplitButton")
+drop_button = NodePath("MarginContainer/VBoxContainer/ButtonContainer/DropButton")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/ExternalItemContextUI" unique_id=1447309201]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ExternalItemContextUI/MarginContainer" unique_id=178705707]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="ItemName" type="Label" parent="HBoxContainer/ExternalItemContextUI/MarginContainer/VBoxContainer" unique_id=1814619229]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45080644, 0.603062, 0.86143565, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.54509807)
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 20
+text = "ItemName"
+horizontal_alignment = 1
+
+[node name="ItemDescript" type="RichTextLabel" parent="HBoxContainer/ExternalItemContextUI/MarginContainer/VBoxContainer" unique_id=2134013788]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.4392157)
+bbcode_enabled = true
+text = "[center]This is the [color=gold] item [/color] description"
+fit_content = true
+
+[node name="ItemFlavorText" type="RichTextLabel" parent="HBoxContainer/ExternalItemContextUI/MarginContainer/VBoxContainer" unique_id=1025307663]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.2784314)
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+bbcode_enabled = true
+text = "[i]This is some lore description to add flavor text to a description"
+fit_content = true
+
+[node name="ItemValue" type="Label" parent="HBoxContainer/ExternalItemContextUI/MarginContainer/VBoxContainer" unique_id=614983490]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 1
+
+[node name="ButtonContainer" type="HBoxContainer" parent="HBoxContainer/ExternalItemContextUI/MarginContainer/VBoxContainer" unique_id=1546175537]
+layout_mode = 2
+alignment = 1
+
+[node name="TrashButton" type="Button" parent="HBoxContainer/ExternalItemContextUI/MarginContainer/VBoxContainer/ButtonContainer" unique_id=1984495381]
+layout_mode = 2
+text = "TRASH"
+
+[node name="DropButton" type="Button" parent="HBoxContainer/ExternalItemContextUI/MarginContainer/VBoxContainer/ButtonContainer" unique_id=1995783669]
+layout_mode = 2
+text = "DROP"
+
+[node name="UseButton" type="Button" parent="HBoxContainer/ExternalItemContextUI/MarginContainer/VBoxContainer/ButtonContainer" unique_id=1627175253]
+layout_mode = 2
+text = "USE"
+
+[node name="SplitButton" type="Button" parent="HBoxContainer/ExternalItemContextUI/MarginContainer/VBoxContainer/ButtonContainer" unique_id=244187949]
+layout_mode = 2
+text = "SPLIT"
+
+[node name="ExternalSplitStackUI" type="PanelContainer" parent="HBoxContainer/ExternalItemContextUI" unique_id=1905538082]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_xywkj")
+script = ExtResource("6_hiijg")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/ExternalItemContextUI/ExternalSplitStackUI" unique_id=1531143667]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ExternalItemContextUI/ExternalSplitStackUI/MarginContainer" unique_id=1021859998]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/ExternalItemContextUI/ExternalSplitStackUI/MarginContainer/VBoxContainer" unique_id=740995999]
+layout_mode = 2
+alignment = 1
+
+[node name="SplitSlider" type="HSlider" parent="HBoxContainer/ExternalItemContextUI/ExternalSplitStackUI/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1496787939]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="SplitQty" type="Label" parent="HBoxContainer/ExternalItemContextUI/ExternalSplitStackUI/MarginContainer/VBoxContainer/HBoxContainer" unique_id=762358896]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "X/XX"
+horizontal_alignment = 1
+
+[node name="SplitButton" type="Button" parent="HBoxContainer/ExternalItemContextUI/ExternalSplitStackUI/MarginContainer/VBoxContainer" unique_id=1166667076]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 1
+text = "Split"
+
+[connection signal="mouse_entered" from="HBoxContainer/ExternalItemContextUI" to="HBoxContainer/ExternalItemContextUI" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="HBoxContainer/ExternalItemContextUI" to="HBoxContainer/ExternalItemContextUI" method="_on_mouse_exited"]
+[connection signal="pressed" from="HBoxContainer/ExternalItemContextUI/MarginContainer/VBoxContainer/ButtonContainer/TrashButton" to="HBoxContainer/ExternalItemContextUI" method="_on_trash_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ExternalItemContextUI/MarginContainer/VBoxContainer/ButtonContainer/DropButton" to="HBoxContainer/ExternalItemContextUI" method="_on_drop_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ExternalItemContextUI/MarginContainer/VBoxContainer/ButtonContainer/UseButton" to="HBoxContainer/ExternalItemContextUI" method="_on_use_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ExternalItemContextUI/MarginContainer/VBoxContainer/ButtonContainer/SplitButton" to="HBoxContainer/ExternalItemContextUI" method="_on_split_button_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/ExternalItemContextUI/ExternalSplitStackUI" to="HBoxContainer/ExternalItemContextUI/ExternalSplitStackUI" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="HBoxContainer/ExternalItemContextUI/ExternalSplitStackUI" to="HBoxContainer/ExternalItemContextUI/ExternalSplitStackUI" method="_on_mouse_exited"]
+[connection signal="value_changed" from="HBoxContainer/ExternalItemContextUI/ExternalSplitStackUI/MarginContainer/VBoxContainer/HBoxContainer/SplitSlider" to="HBoxContainer/ExternalItemContextUI/ExternalSplitStackUI" method="_on_split_slider_value_changed"]
+[connection signal="pressed" from="HBoxContainer/ExternalItemContextUI/ExternalSplitStackUI/MarginContainer/VBoxContainer/SplitButton" to="HBoxContainer/ExternalItemContextUI/ExternalSplitStackUI" method="_on_split_button_pressed"]

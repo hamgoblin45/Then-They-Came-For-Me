@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="ConsumableData" format=3 uid="uid://ijbovam7ggbb"]
+
+[ext_resource type="PackedScene" uid="uid://by521mbgxnhr5" path="res://Items/Consumables/consumable.tscn" id="1_7jmp8"]
+[ext_resource type="Script" uid="uid://dxnc4t0nsritt" path="res://Data/ConsumableData.gd" id="1_luo3d"]
+[ext_resource type="Texture2D" uid="uid://bif3lbyihceg0" path="res://Interface/TestStuff/test_item_spritesheet.png" id="2_7jmp8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_luo3d"]
+atlas = ExtResource("2_7jmp8")
+region = Rect2(32, 480, 32, 32)
+
+[resource]
+script = ExtResource("1_luo3d")
+effects = {
+"energy": 55.0,
+"hp": 40.0,
+"satiety": 65.0
+}
+name = "Steak"
+id = "steak"
+texture = SubResource("AtlasTexture_luo3d")
+description = "It's not much but it's better than nothing"
+buy_value = 25.0
+sell_value = 15.0
+concealability = 2.5
+stackable = true
+useable = true
+equipped_scene = ExtResource("1_7jmp8")
+metadata/_custom_type_script = "uid://dxnc4t0nsritt"

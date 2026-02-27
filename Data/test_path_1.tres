@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PathData" format=3 uid="uid://beeqeykgobv6h"]
+
+[ext_resource type="Script" uid="uid://ch2y18lpkj1j" path="res://Data/PathData.gd" id="1_d4kmd"]
+
+[resource]
+script = ExtResource("1_d4kmd")
+start_pos = Vector3(-158.40025, 5.837348, -226.70935)
+target_positions = Array[Vector3]([Vector3(-111.087, 2.6, -194.828), Vector3(-96.082, 2.6, -283.12)])
+is_looping = true
+metadata/_custom_type_script = "uid://ch2y18lpkj1j"

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c1cqxlfgintig"]
+
+[ext_resource type="Script" uid="uid://dwbtgkwya4a0e" path="res://Data/ItemData.gd" id="1_4xb06"]
+[ext_resource type="Texture2D" uid="uid://bif3lbyihceg0" path="res://Interface/TestStuff/test_item_spritesheet.png" id="2_4xb06"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpj0e"]
+atlas = ExtResource("2_4xb06")
+region = Rect2(64, 256, 32, 32)
+
+[resource]
+script = ExtResource("1_4xb06")
+name = "Boots"
+id = "boots"
+texture = SubResource("AtlasTexture_kpj0e")
+description = "For your feet"
+flavor_text = "Squeaky squeaky"
+buy_value = 25.0
+sell_value = 8.0
+concealability = 0.8
+metadata/_custom_type_script = "uid://dwbtgkwya4a0e"

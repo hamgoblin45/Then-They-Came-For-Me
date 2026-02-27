@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bkqltx6hl064x"]
+
+[ext_resource type="Script" uid="uid://dmuppjmni0hyt" path="res://Items/Interactables/door.gd" id="1_dwkow"]
+[ext_resource type="PackedScene" uid="uid://yri13f1x1xgo" path="res://Items/Meshes/door.gltf" id="1_qohlf"]
+[ext_resource type="PackedScene" uid="uid://d3jlrqbf4beyk" path="res://Items/Interactables/interactable.tscn" id="1_toi8a"]
+[ext_resource type="Texture2D" uid="uid://bi1lgavhmkq5c" path="res://Interface/UI_icons.png" id="2_bxvep"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qohlf"]
+size = Vector3(0.2109375, 2, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qohlf"]
+atlas = ExtResource("2_bxvep")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dwkow"]
+radius = 2.5
+
+[node name="Door" type="Node3D" unique_id=362548465]
+script = ExtResource("1_dwkow")
+
+[node name="door" parent="." unique_id=792928833 instance=ExtResource("1_qohlf")]
+
+[node name="Cube" parent="door" index="0"]
+transform = Transform3D(-0.081829496, 0, 0, 0, 2.1973991, 1.1198248e-07, 0, -1.9210273e-07, 1.2809303, 0, 2.1972866, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="door/Cube" index="1" unique_id=560001843]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="door/Cube/StaticBody3D" unique_id=1828828557]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999996, 0, 0, 0)
+shape = SubResource("BoxShape3D_qohlf")
+
+[node name="Interactable" parent="door/Cube" index="2" unique_id=503422902 instance=ExtResource("1_toi8a")]
+id = "door"
+interact_icon = SubResource("AtlasTexture_qohlf")
+interact_text = "Open"
+
+[node name="CollisionShape3D" parent="door/Cube/Interactable" index="0" unique_id=1764402898]
+shape = SubResource("BoxShape3D_qohlf")
+
+[node name="NPCDetect" type="Area3D" parent="." unique_id=674535186]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCDetect" unique_id=793555996]
+shape = SubResource("SphereShape3D_dwkow")
+
+[connection signal="body_entered" from="NPCDetect" to="." method="_on_npc_detect_body_entered"]
+
+[editable path="door"]
+[editable path="door/Cube/Interactable"]

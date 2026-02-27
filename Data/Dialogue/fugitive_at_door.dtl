@@ -1,0 +1,7 @@
+Hello. I am on the run from the authories. Will you hide me?
+- Yes
+	Thank you so much!
+	do GameState.set_flag("accepted_fugitive", true)
+- No
+	Damn you!
+	do GameState.set_flag("accepted_fugitive", false)

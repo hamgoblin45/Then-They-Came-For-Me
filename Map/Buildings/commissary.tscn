@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://mvcaa2e2uvnj"]
+
+[ext_resource type="PackedScene" uid="uid://d350gy73blt0f" path="res://Map/Buildings/commisary.gltf" id="1_ipquu"]
+[ext_resource type="PackedScene" uid="uid://b1jos7r4f40bc" path="res://NPCs/npc.tscn" id="2_psixa"]
+[ext_resource type="Script" uid="uid://di7kfeuqnwjmf" path="res://NPCs/MerchantNPC.gd" id="3_05kme"]
+[ext_resource type="Script" uid="uid://coai26ivs6uv4" path="res://Data/NPCData.gd" id="3_kuvf1"]
+[ext_resource type="Script" uid="uid://dwbtgkwya4a0e" path="res://Data/ItemData.gd" id="4_1jjxd"]
+[ext_resource type="Resource" uid="uid://dqq8cm0wu0ajg" path="res://Data/Inventory/Pool_Commissary.tres" id="4_frf8y"]
+
+[sub_resource type="Resource" id="Resource_psixa"]
+script = ExtResource("3_kuvf1")
+name = "Vendor"
+id = "vendor"
+default_timeline = "vendor_default"
+metadata/_custom_type_script = "uid://coai26ivs6uv4"
+
+[node name="Commissary" type="Node3D" unique_id=25139329]
+
+[node name="Mesh" parent="." unique_id=40557094 instance=ExtResource("1_ipquu")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+
+[node name="VendorNPC" parent="." unique_id=26024771 instance=ExtResource("2_psixa")]
+transform = Transform3D(1.2994163, 0, -0.038951635, 0, 1.3, 0, 0.038951635, 0, 1.2994163, 0.044542074, 0.29672086, -2.5289974)
+script = ExtResource("3_05kme")
+merchant_id = "commissary"
+is_legal_merchant = true
+inventory_pool = ExtResource("4_frf8y")
+guaranteed_items = Array[ExtResource("4_1jjxd")]([])
+npc_data = SubResource("Resource_psixa")

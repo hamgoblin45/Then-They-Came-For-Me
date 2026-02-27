@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://cj1cyf80hrqb4"]
+
+[ext_resource type="Script" uid="uid://bof061njs5h01" path="res://Interface/Inventory/Shop/shop_slot_ui.gd" id="1_3au0k"]
+[ext_resource type="Texture2D" uid="uid://bif3lbyihceg0" path="res://Interface/TestStuff/test_item_spritesheet.png" id="2_l76vs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ik1e"]
+bg_color = Color(0.32172796, 0.32172796, 0.32172787, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2q6u2"]
+atlas = ExtResource("2_l76vs")
+region = Rect2(160, 480, 32, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pb85i"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0)
+border_width_left = 9
+border_width_top = 9
+border_width_right = 9
+border_width_bottom = 9
+border_color = Color(0.9607843, 0.6784314, 0.32941177, 1)
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="ShopSlotUI" type="PanelContainer"]
+custom_minimum_size = Vector2(64, 64)
+theme_override_styles/panel = SubResource("StyleBoxFlat_2ik1e")
+script = ExtResource("1_3au0k")
+
+[node name="ItemUI" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="ItemTexture" type="TextureRect" parent="ItemUI"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = SubResource("AtlasTexture_2q6u2")
+expand_mode = 1
+
+[node name="Quantity" type="Label" parent="ItemUI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "10"
+
+[node name="SelectedPanel" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pb85i")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

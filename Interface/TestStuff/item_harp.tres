@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://fligqycw40pd"]
+
+[ext_resource type="Script" uid="uid://dwbtgkwya4a0e" path="res://Data/ItemData.gd" id="1_ry0tm"]
+[ext_resource type="Texture2D" uid="uid://bif3lbyihceg0" path="res://Interface/TestStuff/test_item_spritesheet.png" id="2_t7gy3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0hq4"]
+atlas = ExtResource("2_t7gy3")
+region = Rect2(96, 352, 32, 32)
+
+[resource]
+script = ExtResource("1_ry0tm")
+name = "Harp"
+id = "harp"
+texture = SubResource("AtlasTexture_m0hq4")
+description = "A simple harp. Maybe someone will want to buy it."
+flavor_text = "Sounds like heaven"
+buy_value = 10.0
+sell_value = 5.0
+concealability = 0.5
+metadata/_custom_type_script = "uid://dwbtgkwya4a0e"

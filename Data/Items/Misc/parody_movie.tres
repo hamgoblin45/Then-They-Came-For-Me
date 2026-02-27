@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://jo0gq5u6e4hl"]
+
+[ext_resource type="Script" uid="uid://dwbtgkwya4a0e" path="res://Data/ItemData.gd" id="1_ad5ei"]
+[ext_resource type="Texture2D" uid="uid://bif3lbyihceg0" path="res://Interface/TestStuff/test_item_spritesheet.png" id="2_edcur"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ad5ei"]
+atlas = ExtResource("2_edcur")
+region = Rect2(224, 416, 32, 32)
+
+[resource]
+script = ExtResource("1_ad5ei")
+name = "Parody Movie Cartridge"
+id = "parody_movie"
+texture = SubResource("AtlasTexture_ad5ei")
+description = "A movie that mocked the regime during their early days in power."
+flavor_text = "\"No, I'm not a Nazi. I'm just a method-acting cosplayer.\""
+buy_value = 50.0
+sell_value = 50.0
+concealability = 2.8
+contraband_level = 2
+metadata/_custom_type_script = "uid://dwbtgkwya4a0e"

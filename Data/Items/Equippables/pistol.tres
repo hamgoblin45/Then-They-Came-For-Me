@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="EquippableData" format=3 uid="uid://bbcvmy2ujko5d"]
+
+[ext_resource type="Script" uid="uid://2xssdkvk52q0" path="res://Data/EquippableData.gd" id="1_0mhq1"]
+[ext_resource type="Texture2D" uid="uid://bif3lbyihceg0" path="res://Interface/TestStuff/test_item_spritesheet.png" id="2_ss0gn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_feaqu"]
+atlas = ExtResource("2_ss0gn")
+region = Rect2(160, 192, 32, 32)
+
+[resource]
+script = ExtResource("1_0mhq1")
+name = "Pistol"
+id = "pistol"
+texture = SubResource("AtlasTexture_feaqu")
+description = "Holds 11 rounds"
+flavor_text = "Bang bang"
+buy_value = 500.0
+sell_value = 150.0
+concealability = 3.0
+contraband_level = 4
+metadata/_custom_type_script = "uid://2xssdkvk52q0"

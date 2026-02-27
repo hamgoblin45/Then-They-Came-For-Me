@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://0pugcuvqw443"]
+
+[ext_resource type="Script" uid="uid://cqg07wuoqg0v0" path="res://Interface/TestStuff/testing_hub.gd" id="1_rtd6f"]
+
+[node name="TestingHub" type="Control" unique_id=1583860260]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rtd6f")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1478230530]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.043039158, 0.04303915, 0.04303915, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1679492866]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=149080466]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=2000029648]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "TTCFM Debug Launcher"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=1330638169]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer" unique_id=60803752]
+layout_mode = 2
+columns = 2
+
+[node name="TimeLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=376663027]
+layout_mode = 2
+text = "Start Time (Hours):"
+
+[node name="TimeInput" type="SpinBox" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=915586545]
+layout_mode = 2
+max_value = 23.0
+value = 8.0
+
+[node name="SuscpicionLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=773744492]
+layout_mode = 2
+text = "Starting Suspicion:"
+
+[node name="SuspicionInput" type="SpinBox" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=1677763178]
+layout_mode = 2
+
+[node name="MoneyLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=103110953]
+layout_mode = 2
+text = "Starting Money:"
+
+[node name="MoneyInput" type="SpinBox" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=1159372398]
+layout_mode = 2
+max_value = 9999.0
+
+[node name="StartWGuest" type="Label" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=955632081]
+layout_mode = 2
+text = "Start w/ Guest:"
+
+[node name="GuestCheck" type="CheckBox" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=1079863108]
+layout_mode = 2
+
+[node name="ForceRaidLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=130959057]
+layout_mode = 2
+text = "Force 9AM Raid:"
+
+[node name="ForceRaidCheck" type="CheckBox" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=903848783]
+layout_mode = 2
+
+[node name="LaunchButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=214924545]
+layout_mode = 2
+text = "LAUNCH GAME"

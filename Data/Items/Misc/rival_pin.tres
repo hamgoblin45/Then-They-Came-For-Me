@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="InventoryItemData" format=3 uid="uid://c762aadnr6q1f"]
+
+[ext_resource type="Script" uid="uid://dwbtgkwya4a0e" path="res://Data/ItemData.gd" id="1_hq80r"]
+[ext_resource type="Texture2D" uid="uid://bif3lbyihceg0" path="res://Interface/TestStuff/test_item_spritesheet.png" id="2_0ondx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hq80r"]
+atlas = ExtResource("2_0ondx")
+region = Rect2(416, 512, 32, 32)
+
+[resource]
+script = ExtResource("1_hq80r")
+name = "Rival Election Pin"
+id = "rival_pin"
+texture = SubResource("AtlasTexture_hq80r")
+description = "A pin delaring support for the opposition candidate in the last election."
+flavor_text = "\"We're better than this!\""
+buy_value = 20.0
+sell_value = 20.0
+concealability = 4.0
+contraband_level = 3
+metadata/_custom_type_script = "uid://dwbtgkwya4a0e"

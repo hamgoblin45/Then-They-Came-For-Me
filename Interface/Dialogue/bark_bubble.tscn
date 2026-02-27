@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cxosfcljv24w3"]
+
+[ext_resource type="Script" uid="uid://bw2bss7mnbogw" path="res://Interface/Dialogue/bark_bubble.gd" id="1_adp5t"]
+
+[node name="BarkBubble" type="Label3D" unique_id=514323061]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+billboard = 1
+no_depth_test = true
+texture_filter = 0
+text = "TEST mother fucker!"
+font_size = 860
+outline_size = 127
+script = ExtResource("1_adp5t")

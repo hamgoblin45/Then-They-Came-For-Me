@@ -1,0 +1,3 @@
+Wanna buy something?
+- What do you have?
+[signal arg_type="dict" arg="{"shop_inventory":"res://Data/Inventory/Pool_BlackMarket.tres","signal_name":"open_shop"}"]

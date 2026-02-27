@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ddmr0nwsn4o2x"]
+
+[ext_resource type="PackedScene" uid="uid://y5d6nk5y7lbj" path="res://Map/basic_bed.glb" id="2_2j6ks"]
+[ext_resource type="Script" uid="uid://btqmr5k878ole" path="res://Items/Interactables/bed_interactable.gd" id="2_hjxr5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hjxr5"]
+size = Vector3(2.642334, 0.7134094, 1.6018066)
+
+[node name="PlayerBed" type="Node3D" unique_id=456939367]
+
+[node name="Interactable" type="Area3D" parent="." unique_id=313610612]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("2_hjxr5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1764402898]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.068359375, 0.5162811, -0.14807129)
+shape = SubResource("BoxShape3D_hjxr5")
+
+[node name="BedMesh" parent="." unique_id=1938348874 instance=ExtResource("2_2j6ks")]

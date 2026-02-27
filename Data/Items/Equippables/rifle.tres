@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="EquippableData" format=3 uid="uid://crvqwhmlb552o"]
+
+[ext_resource type="Script" uid="uid://2xssdkvk52q0" path="res://Data/EquippableData.gd" id="1_udpx3"]
+[ext_resource type="Texture2D" uid="uid://bif3lbyihceg0" path="res://Interface/TestStuff/test_item_spritesheet.png" id="2_h01cs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udpx3"]
+atlas = ExtResource("2_h01cs")
+region = Rect2(128, 192, 32, 32)
+
+[resource]
+script = ExtResource("1_udpx3")
+name = "Rifle"
+id = "Rifle"
+texture = SubResource("AtlasTexture_udpx3")
+description = "Holds 11 rounds"
+flavor_text = "Bang bang"
+buy_value = 500.0
+sell_value = 150.0
+concealability = 1.0
+contraband_level = 4
+metadata/_custom_type_script = "uid://2xssdkvk52q0"

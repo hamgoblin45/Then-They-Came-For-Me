@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://m80rmki4fbox"]
+
+[ext_resource type="Shader" uid="uid://7k6r4cwfsgh" path="res://Shaders/starry_sky.gdshader" id="1_fm00i"]
+
+[resource]
+shader = ExtResource("1_fm00i")
+shader_parameter/vertical_sections = 21
+shader_parameter/star_size = 0.02
+shader_parameter/star_falloff = 4.0
+shader_parameter/margin = 0.05

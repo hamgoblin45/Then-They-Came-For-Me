@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="ConsumableData" format=3 uid="uid://xh53w2i0oo5t"]
+
+[ext_resource type="PackedScene" uid="uid://by521mbgxnhr5" path="res://Items/Consumables/consumable.tscn" id="1_0jtfa"]
+[ext_resource type="Script" uid="uid://dxnc4t0nsritt" path="res://Data/ConsumableData.gd" id="1_opir1"]
+[ext_resource type="Texture2D" uid="uid://bif3lbyihceg0" path="res://Interface/TestStuff/test_item_spritesheet.png" id="2_3vh2m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vh2m"]
+atlas = ExtResource("2_3vh2m")
+region = Rect2(448, 448, 32, 32)
+
+[resource]
+script = ExtResource("1_opir1")
+effects = {
+"energy": 4.0,
+"hp": 2.0,
+"satiety": 10.0
+}
+name = "Cookie"
+id = "cookie"
+texture = SubResource("AtlasTexture_3vh2m")
+description = "It's not much but it's better than nothing"
+buy_value = 2.0
+sell_value = 1.0
+concealability = 4.5
+stackable = true
+useable = true
+equipped_scene = ExtResource("1_0jtfa")
+metadata/_custom_type_script = "uid://dxnc4t0nsritt"

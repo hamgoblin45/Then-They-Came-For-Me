@@ -1,0 +1,210 @@
+[gd_scene format=3 uid="uid://ci8qlujuy7ma5"]
+
+[ext_resource type="Script" uid="uid://cbrq0qtlgucg7" path="res://Interface/Objectives/objective_tracker_ui.gd" id="2_7d15p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mdw3h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_76m2h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6yvhp"]
+
+[node name="ObjectiveControlUI" type="Control" unique_id=95797487]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ObjectiveManager" type="Node" parent="." unique_id=997818787]
+
+[node name="OutputControl" type="Control" parent="." unique_id=168914967]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -550.0
+offset_right = 195.0
+offset_bottom = 233.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="OutputPanel" type="PanelContainer" parent="OutputControl" unique_id=193747281]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_mdw3h")
+
+[node name="OutputContainer" type="VBoxContainer" parent="OutputControl/OutputPanel" unique_id=214108552]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ObjectiveTrackerUI" type="PanelContainer" parent="." unique_id=938888523]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -301.0
+offset_top = -204.0
+offset_right = -15.0
+offset_bottom = 67.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_76m2h")
+script = ExtResource("2_7d15p")
+
+[node name="ObjectiveTrackerContainer" type="VBoxContainer" parent="ObjectiveTrackerUI" unique_id=1390156651]
+layout_mode = 2
+
+[node name="ObjectivesHeader" type="Label" parent="ObjectiveTrackerUI/ObjectiveTrackerContainer" unique_id=21156382]
+layout_mode = 2
+text = "OBJECTIVES"
+horizontal_alignment = 1
+
+[node name="ObjectiveContainer" type="VBoxContainer" parent="ObjectiveTrackerUI/ObjectiveTrackerContainer" unique_id=1935590077]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TestControl" type="Control" parent="." unique_id=1199305274]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 41.0
+offset_top = -176.0
+offset_right = 234.0
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButtonsPanel" type="PanelContainer" parent="TestControl" unique_id=1951262424]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 41.0
+offset_bottom = 145.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6yvhp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TestControl/ButtonsPanel" unique_id=1975816550]
+layout_mode = 2
+
+[node name="SimpleObjectiveContainers" type="VBoxContainer" parent="TestControl/ButtonsPanel/VBoxContainer" unique_id=797260868]
+layout_mode = 2
+
+[node name="SimpleLabel" type="Label" parent="TestControl/ButtonsPanel/VBoxContainer/SimpleObjectiveContainers" unique_id=1815145236]
+layout_mode = 2
+text = "Simple Objective"
+horizontal_alignment = 1
+
+[node name="AssignSimpleObjective" type="Button" parent="TestControl/ButtonsPanel/VBoxContainer/SimpleObjectiveContainers" unique_id=1964905575]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Assign Simple Objective"
+
+[node name="AdvanceSimpleObjective" type="Button" parent="TestControl/ButtonsPanel/VBoxContainer/SimpleObjectiveContainers" unique_id=2029621628]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "Advance Simple Objective"
+
+[node name="FailSimpleObjective" type="Button" parent="TestControl/ButtonsPanel/VBoxContainer/SimpleObjectiveContainers" unique_id=1740149153]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+disabled = true
+text = "Fail Simple Objective"
+
+[node name="TurnInSimpleObjective" type="Button" parent="TestControl/ButtonsPanel/VBoxContainer/SimpleObjectiveContainers" unique_id=1641509386]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "Turn In Simple Objective"
+
+[node name="GatherObjectiveContainer" type="VBoxContainer" parent="TestControl/ButtonsPanel/VBoxContainer" unique_id=1109718811]
+layout_mode = 2
+
+[node name="GatherLabel" type="Label" parent="TestControl/ButtonsPanel/VBoxContainer/GatherObjectiveContainer" unique_id=1130976254]
+layout_mode = 2
+text = "Gather Objective"
+horizontal_alignment = 1
+
+[node name="AssignGatherObjective" type="Button" parent="TestControl/ButtonsPanel/VBoxContainer/GatherObjectiveContainer" unique_id=130746180]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Assign Gather Objective"
+
+[node name="GatherRequiredItem" type="Button" parent="TestControl/ButtonsPanel/VBoxContainer/GatherObjectiveContainer" unique_id=1536502777]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "Gather Required Item"
+
+[node name="GatherUnrelatedItem" type="Button" parent="TestControl/ButtonsPanel/VBoxContainer/GatherObjectiveContainer" unique_id=241061310]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "Gather Unrelated Item"
+
+[node name="DropRequiredItem" type="Button" parent="TestControl/ButtonsPanel/VBoxContainer/GatherObjectiveContainer" unique_id=1395955039]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "Drop/Trash Required Item"
+
+[node name="MultiChoiceContainer" type="VBoxContainer" parent="TestControl/ButtonsPanel/VBoxContainer" unique_id=297446967]
+layout_mode = 2
+
+[node name="MultiChoiceLabel" type="Label" parent="TestControl/ButtonsPanel/VBoxContainer/MultiChoiceContainer" unique_id=1991476946]
+layout_mode = 2
+text = "Multi-Choice Objective"
+horizontal_alignment = 1
+
+[node name="AssignMultiChoiceObjective" type="Button" parent="TestControl/ButtonsPanel/VBoxContainer/MultiChoiceContainer" unique_id=1694445675]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Assign MultiChoice Objective"
+
+[node name="Choice1Button" type="Button" parent="TestControl/ButtonsPanel/VBoxContainer/MultiChoiceContainer" unique_id=1591012899]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "Choice 1"
+
+[node name="Choice2Button" type="Button" parent="TestControl/ButtonsPanel/VBoxContainer/MultiChoiceContainer" unique_id=655754475]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "Choice 2"
+
+[node name="ComplexContainer" type="VBoxContainer" parent="TestControl/ButtonsPanel/VBoxContainer" unique_id=1748744499]
+layout_mode = 2
+
+[node name="AssignComplexButton" type="Button" parent="TestControl/ButtonsPanel/VBoxContainer/ComplexContainer" unique_id=708410006]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Assign Complex Objective"
+
+[connection signal="pressed" from="TestControl/ButtonsPanel/VBoxContainer/SimpleObjectiveContainers/AssignSimpleObjective" to="TestControl" method="_on_assign_simple_objective_pressed"]
+[connection signal="pressed" from="TestControl/ButtonsPanel/VBoxContainer/SimpleObjectiveContainers/AdvanceSimpleObjective" to="TestControl" method="_on_advance_simple_objective_pressed"]
+[connection signal="pressed" from="TestControl/ButtonsPanel/VBoxContainer/SimpleObjectiveContainers/FailSimpleObjective" to="TestControl" method="_on_fail_simple_objective_pressed"]
+[connection signal="pressed" from="TestControl/ButtonsPanel/VBoxContainer/SimpleObjectiveContainers/TurnInSimpleObjective" to="TestControl" method="_on_turn_in_simple_objective_pressed"]
+[connection signal="pressed" from="TestControl/ButtonsPanel/VBoxContainer/GatherObjectiveContainer/AssignGatherObjective" to="TestControl" method="_on_assign_gather_objective_pressed"]
+[connection signal="pressed" from="TestControl/ButtonsPanel/VBoxContainer/GatherObjectiveContainer/GatherRequiredItem" to="TestControl" method="_on_gather_required_item_pressed"]
+[connection signal="pressed" from="TestControl/ButtonsPanel/VBoxContainer/GatherObjectiveContainer/GatherUnrelatedItem" to="TestControl" method="_on_gather_unrelated_item_pressed"]
+[connection signal="pressed" from="TestControl/ButtonsPanel/VBoxContainer/GatherObjectiveContainer/DropRequiredItem" to="TestControl" method="_on_drop_required_item_pressed"]
+[connection signal="pressed" from="TestControl/ButtonsPanel/VBoxContainer/MultiChoiceContainer/AssignMultiChoiceObjective" to="TestControl" method="_on_assign_multi_choice_objective_pressed"]
+[connection signal="pressed" from="TestControl/ButtonsPanel/VBoxContainer/MultiChoiceContainer/Choice1Button" to="TestControl" method="_on_choice_1_button_pressed"]
+[connection signal="pressed" from="TestControl/ButtonsPanel/VBoxContainer/MultiChoiceContainer/Choice2Button" to="TestControl" method="_on_choice_2_button_pressed"]

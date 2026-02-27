@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="EquippableData" format=3 uid="uid://371084472b42"]
+
+[ext_resource type="PackedScene" uid="uid://ci3ahqvuqvbyo" path="res://Items/swingable.tscn" id="1_6pf3u"]
+[ext_resource type="Script" uid="uid://2xssdkvk52q0" path="res://Data/EquippableData.gd" id="1_jk83p"]
+[ext_resource type="Texture2D" uid="uid://bif3lbyihceg0" path="res://Interface/TestStuff/test_item_spritesheet.png" id="2_6pf3u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jk83p"]
+atlas = ExtResource("2_6pf3u")
+region = Rect2(128, 320, 32, 32)
+
+[resource]
+script = ExtResource("1_jk83p")
+equippable_scene = ExtResource("1_6pf3u")
+name = "Hammer"
+id = "hammer"
+texture = SubResource("AtlasTexture_jk83p")
+description = "Good for nails or fascists"
+flavor_text = "Whack!"
+buy_value = 500.0
+sell_value = 150.0
+concealability = 2.0
+contraband_level = 1
+equipped_scene = ExtResource("1_6pf3u")
+metadata/_custom_type_script = "uid://2xssdkvk52q0"

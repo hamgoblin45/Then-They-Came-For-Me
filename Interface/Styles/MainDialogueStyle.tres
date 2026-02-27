@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="DialogicStyle" format=3 uid="uid://dmnxm5sx31ts5"]
+
+[ext_resource type="PackedScene" uid="uid://cqpb3ie51rwl5" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_Default/default_layout_base.tscn" id="1_urdlh"]
+[ext_resource type="Script" uid="uid://bwg6yncmh2cml" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_timqo"]
+[ext_resource type="PackedScene" uid="uid://b44r8sh36n080" path="res://Interface/Styles/CenteredChoices/custom_centered_choices.tscn" id="5_fq5uu"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="5_m2pol"]
+[ext_resource type="PackedScene" uid="uid://bquja8jyk8kbr" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn" id="6_ta1eo"]
+[ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="9_8kdt6"]
+[ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="10_s3s0o"]
+[ext_resource type="Script" uid="uid://dv08k6ljua6fm" path="res://addons/dialogic/Resources/dialogic_style.gd" id="11_2hxa0"]
+
+[sub_resource type="Resource" id="Resource_bsq0k"]
+script = ExtResource("2_timqo")
+scene = ExtResource("1_urdlh")
+
+[sub_resource type="Resource" id="Resource_y0l6h"]
+script = ExtResource("2_timqo")
+scene = ExtResource("5_m2pol")
+
+[sub_resource type="Resource" id="Resource_qd6dx"]
+script = ExtResource("2_timqo")
+scene = ExtResource("6_ta1eo")
+overrides = {
+"box_size": "Vector2(420, 150)"
+}
+
+[sub_resource type="Resource" id="Resource_qe0my"]
+script = ExtResource("2_timqo")
+scene = ExtResource("5_fq5uu")
+
+[sub_resource type="Resource" id="Resource_rw7dt"]
+script = ExtResource("2_timqo")
+scene = ExtResource("9_8kdt6")
+
+[sub_resource type="Resource" id="Resource_kvv1m"]
+script = ExtResource("2_timqo")
+scene = ExtResource("10_s3s0o")
+
+[resource]
+script = ExtResource("11_2hxa0")
+name = "MainDialogueStyle"
+layer_list = Array[String](["12", "13", "15", "16", "17"])
+layer_info = {
+"": SubResource("Resource_bsq0k"),
+"12": SubResource("Resource_y0l6h"),
+"13": SubResource("Resource_qd6dx"),
+"15": SubResource("Resource_qe0my"),
+"16": SubResource("Resource_rw7dt"),
+"17": SubResource("Resource_kvv1m")
+}
+metadata/_latest_layer = "15"

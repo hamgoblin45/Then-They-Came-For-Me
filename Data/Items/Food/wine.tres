@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="ConsumableData" format=3 uid="uid://ib385dgptwrd"]
+
+[ext_resource type="Script" uid="uid://dxnc4t0nsritt" path="res://Data/ConsumableData.gd" id="1_dqu6b"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f2bmk"]
+load_path = "res://.godot/imported/test_item_spritesheet.png-c5ac06154775a8149d0e2613b3dfede6.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcwok"]
+atlas = SubResource("CompressedTexture2D_f2bmk")
+region = Rect2(448, 288, 32, 32)
+
+[resource]
+script = ExtResource("1_dqu6b")
+effects = {
+"energy": 0.0,
+"hp": 2.0,
+"hunger": 0.0,
+"stress": 12.0
+}
+name = "Wine"
+id = "wine"
+texture = SubResource("AtlasTexture_xcwok")
+description = "It's not much but it's better than nothing"
+buy_value = 1.8
+sell_value = 0.5
+concealability = 4.0
+stackable = true
+useable = true
+metadata/_custom_type_script = "uid://dxnc4t0nsritt"

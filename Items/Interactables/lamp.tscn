@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://vesf8xtd74rn"]
+
+[ext_resource type="Script" uid="uid://bfieu26yk2f26" path="res://Items/Interactables/lamp.gd" id="1_b657n"]
+[ext_resource type="AudioStream" uid="uid://b1fxygtu6jhbr" path="res://Audio/switch_on.mp3" id="2_ih4e1"]
+[ext_resource type="PackedScene" uid="uid://d3jlrqbf4beyk" path="res://Items/Interactables/interactable.tscn" id="3_x7dyy"]
+[ext_resource type="Texture2D" uid="uid://dtysfm7paobyb" path="res://Interface/icon_atlas.tres" id="4_16d5b"]
+[ext_resource type="PackedScene" uid="uid://7tyb052ddhfs" path="res://Items/Meshes/lamp.gltf" id="5_foxj7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7mycd"]
+size = Vector3(0.5917969, 1.4990234, 0.54785156)
+
+[node name="Lamp" type="Node3D" unique_id=1271117152]
+script = ExtResource("1_b657n")
+
+[node name="LampAudio" type="AudioStreamPlayer3D" parent="." unique_id=735849092]
+stream = ExtResource("2_ih4e1")
+
+[node name="Interactable" parent="." unique_id=1632719010 instance=ExtResource("3_x7dyy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.075879, 0)
+id = "lamp"
+interact_icon = ExtResource("4_16d5b")
+interact_text = "Click to lamp"
+
+[node name="CollisionShape3D" parent="Interactable" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.31835938, 0)
+shape = SubResource("BoxShape3D_7mycd")
+
+[node name="LampLight" type="OmniLight3D" parent="." unique_id=938291036]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4876975, 0)
+visible = false
+
+[node name="lamp" parent="." unique_id=164830007 instance=ExtResource("5_foxj7")]
+
+[editable path="Interactable"]

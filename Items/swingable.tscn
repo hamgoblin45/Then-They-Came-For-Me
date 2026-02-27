@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ci3ahqvuqvbyo"]
+
+[ext_resource type="Script" uid="uid://ygobhrimcyos" path="res://Items/swingable.gd" id="1_0p6w6"]
+[ext_resource type="PackedScene" uid="uid://66oowgb5nudm" path="res://Items/Meshes/axe.gltf" id="1_ygndu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ygndu"]
+size = Vector3(0.15, 0.43, 0.22)
+
+[node name="Swingable" type="Node3D" unique_id=777916753]
+script = ExtResource("1_0p6w6")
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="." unique_id=612438968]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6390437, 0.043426096)
+shape = SubResource("BoxShape3D_ygndu")
+target_position = Vector3(0, 0, 0)
+collision_mask = 8
+
+[node name="axe" parent="." unique_id=568483005 instance=ExtResource("1_ygndu")]

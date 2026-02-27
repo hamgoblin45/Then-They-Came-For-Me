@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dj04joesklsd5"]
+
+[ext_resource type="Script" uid="uid://6oqv3cnhpp3" path="res://Scripts/Managers/GuestManager.gd" id="1_uemkw"]
+[ext_resource type="PackedScene" uid="uid://xn46lpckumw5" path="res://Items/Interactables/guest_clue.tscn" id="2_yqf48"]
+
+[node name="GuestManager" type="Node" unique_id=604219957]
+script = ExtResource("1_uemkw")
+clue_prefabs = Array[PackedScene]([ExtResource("2_yqf48")])

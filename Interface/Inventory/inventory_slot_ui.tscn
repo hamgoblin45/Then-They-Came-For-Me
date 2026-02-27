@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://d3yl41a7rncgb"]
+
+[ext_resource type="Script" uid="uid://cmgrxt4425wc2" path="res://Interface/Inventory/inventory_slot_ui.gd" id="1_e3oss"]
+[ext_resource type="Texture2D" uid="uid://c8ptw3jtdkmqe" path="res://Interface/TestStuff/test_atlas_texture.tres" id="2_e3oss"]
+[ext_resource type="Texture2D" uid="uid://bi1lgavhmkq5c" path="res://Interface/UI_icons.png" id="3_dahv1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ik1e"]
+bg_color = Color(0.32172796, 0.32172796, 0.32172787, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e3oss"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0)
+border_width_left = 9
+border_width_top = 9
+border_width_right = 9
+border_width_bottom = 9
+border_color = Color(0.9607843, 0.6784314, 0.32941177, 1)
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5eqy"]
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewxsh"]
+atlas = ExtResource("3_dahv1")
+region = Rect2(576, 0, 64, 64)
+
+[node name="InventorySlotUI" type="PanelContainer" unique_id=365796890]
+process_mode = 3
+custom_minimum_size = Vector2(70, 70)
+offset_right = 70.0
+offset_bottom = 70.0
+pivot_offset = Vector2(35, 35)
+theme_override_styles/panel = SubResource("StyleBoxFlat_2ik1e")
+script = ExtResource("1_e3oss")
+
+[node name="ItemUI" type="MarginContainer" parent="." unique_id=778054857]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="ItemTexture" type="TextureRect" parent="ItemUI" unique_id=1852822847]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = ExtResource("2_e3oss")
+expand_mode = 1
+
+[node name="Quantity" type="Label" parent="ItemUI" unique_id=1986426903]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "10"
+
+[node name="SelectedPanel" type="Panel" parent="." unique_id=1817103999]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e3oss")
+
+[node name="EquipHighlight" type="Panel" parent="." unique_id=2067750860]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_u5eqy")
+
+[node name="HotbarNumber" type="Label" parent="." unique_id=751258867]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.8371467, 0.5762264, 1.92523e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.70980394)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+
+[node name="SearchVignette" type="ColorRect" parent="." unique_id=1007726342]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.025289927, 0.025647644, 0.023585085, 0.2901961)
+
+[node name="SearchEye" type="TextureProgressBar" parent="." unique_id=977742184]
+visible = false
+layout_mode = 2
+fill_mode = 3
+texture_progress = SubResource("AtlasTexture_ewxsh")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

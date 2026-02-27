@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://by521mbgxnhr5"]
+
+[ext_resource type="Script" uid="uid://kdm5k8lpk0vc" path="res://Items/Consumables/consumable.gd" id="1_2cpyg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2cpyg"]
+albedo_color = Color(0.79457515, 0.35588852, 0.09044943, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_qbwow"]
+material = SubResource("StandardMaterial3D_2cpyg")
+radius = 0.25
+height = 0.5
+
+[node name="Consumable" type="Node3D" unique_id=356965529]
+script = ExtResource("1_2cpyg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1541387641]
+mesh = SubResource("SphereMesh_qbwow")

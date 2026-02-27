@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://k5ldx287f1k6"]
+
+[ext_resource type="Script" uid="uid://bio7jkgu1a2m0" path="res://Scripts/Managers/AudioManager.gd" id="1_8cdu0"]
+[ext_resource type="AudioStream" uid="uid://cmda5h7btv5di" path="res://Audio/SFX/Nondiagetic/piano_chord.mp3" id="2_5femq"]
+[ext_resource type="AudioStream" uid="uid://c58h4fts56jh2" path="res://Audio/SFX/Spatial/rummage1.mp3" id="3_845pu"]
+[ext_resource type="AudioStream" uid="uid://crsredvddoeoc" path="res://Audio/SFX/Spatial/door_knock1.mp3" id="4_fwl6w"]
+[ext_resource type="AudioStream" uid="uid://ci5vdlwukttb8" path="res://Audio/SFX/Spatial/door_pound.mp3" id="5_845pu"]
+[ext_resource type="AudioStream" uid="uid://5whmn6lj6o0b" path="res://Audio/SFX/Spatial/door_open1.mp3" id="7_dm6q5"]
+[ext_resource type="AudioStream" uid="uid://btk8gvbfdhs4d" path="res://Audio/SFX/Spatial/door_close1.mp3" id="8_5pjl3"]
+[ext_resource type="AudioStream" uid="uid://ryf44jbi8of4" path="res://Audio/SFX/Spatial/handcuffs.mp3" id="8_dm6q5"]
+[ext_resource type="AudioStream" uid="uid://nnd0o70aw4f5" path="res://Audio/SFX/Spatial/Footsteps/footstep1.mp3" id="9_ykpej"]
+[ext_resource type="AudioStream" uid="uid://dxmqf6kujes5u" path="res://Audio/SFX/Spatial/Footsteps/footstep2.mp3" id="10_30t8y"]
+[ext_resource type="AudioStream" uid="uid://d1jb8pef1bddm" path="res://Audio/SFX/Spatial/Footsteps/footstep3.mp3" id="11_jui12"]
+[ext_resource type="AudioStream" uid="uid://gtqpw1rofatq" path="res://Audio/SFX/Spatial/Footsteps/footstep_wood1.ogg" id="12_8db5j"]
+[ext_resource type="AudioStream" uid="uid://c1ublmv1u2vtu" path="res://Audio/SFX/Spatial/Footsteps/footstep_wood2.ogg" id="13_6h5br"]
+[ext_resource type="AudioStream" uid="uid://s41q8smnrkut" path="res://Audio/SFX/Spatial/Footsteps/footstep_wood3.ogg" id="14_vij0n"]
+[ext_resource type="AudioStream" uid="uid://civ8flwkpmyfq" path="res://Audio/SFX/Spatial/Footsteps/footstep_wood4.ogg" id="15_c68cn"]
+[ext_resource type="AudioStream" uid="uid://bay4wdef38x38" path="res://Audio/SFX/Spatial/Footsteps/footstep_concrete1.ogg" id="16_ijj1r"]
+[ext_resource type="AudioStream" uid="uid://c75kv4jkkl8v6" path="res://Audio/SFX/Spatial/Footsteps/footstep_concrete2.ogg" id="17_snv24"]
+[ext_resource type="AudioStream" uid="uid://cltm1pprd55lo" path="res://Audio/SFX/Spatial/Footsteps/footstep_concrete3.ogg" id="18_imuyc"]
+[ext_resource type="AudioStream" uid="uid://ckm3f4w5iud2f" path="res://Audio/SFX/Spatial/Footsteps/footstep_concrete4.ogg" id="19_d12ae"]
+[ext_resource type="AudioStream" uid="uid://qxae1hfb2m7w" path="res://Audio/SFX/Spatial/Footsteps/footstep_carpet1.ogg" id="20_6hwmr"]
+[ext_resource type="AudioStream" uid="uid://oinapoavb7es" path="res://Audio/SFX/Spatial/Footsteps/footstep_carpet2.ogg" id="21_8dbv2"]
+[ext_resource type="AudioStream" uid="uid://c5igk7f4xrmbt" path="res://Audio/SFX/Spatial/Footsteps/footstep_carpet3.ogg" id="22_j6cy1"]
+[ext_resource type="AudioStream" uid="uid://ojm6avkkou1a" path="res://Audio/SFX/Spatial/Footsteps/footstep_gravel1.ogg" id="23_i3206"]
+[ext_resource type="AudioStream" uid="uid://54uxj7vrg2a0" path="res://Audio/SFX/Spatial/Footsteps/footstep_gravel2.ogg" id="24_qjtkl"]
+[ext_resource type="AudioStream" uid="uid://dk3nbctjjh5ug" path="res://Audio/SFX/Spatial/Footsteps/footstep_gravel3.ogg" id="25_g61ig"]
+[ext_resource type="AudioStream" uid="uid://xheqw27kq85a" path="res://Audio/SFX/Spatial/Footsteps/footstep_gravel4.ogg" id="26_q2bmg"]
+
+[sub_resource type="AudioStream" id="AudioStream_5femq"]
+
+[node name="AudioManager" type="Node" unique_id=446803662]
+script = ExtResource("1_8cdu0")
+sounds = {
+"busted_sting": ExtResource("2_5femq"),
+"door_close": [ExtResource("8_5pjl3")],
+"door_knock": ExtResource("4_fwl6w"),
+"door_open": [ExtResource("7_dm6q5")],
+"door_pound": ExtResource("5_845pu"),
+"footstep_carpet": [ExtResource("20_6hwmr"), ExtResource("21_8dbv2"), ExtResource("22_j6cy1")],
+"footstep_concrete": [ExtResource("16_ijj1r"), ExtResource("17_snv24"), ExtResource("18_imuyc"), ExtResource("19_d12ae")],
+"footstep_default": [ExtResource("9_ykpej"), ExtResource("10_30t8y"), ExtResource("11_jui12")],
+"footstep_gravel": [ExtResource("23_i3206"), ExtResource("24_qjtkl"), ExtResource("25_g61ig"), ExtResource("26_q2bmg")],
+"footstep_wood": [ExtResource("12_8db5j"), ExtResource("13_6h5br"), ExtResource("14_vij0n"), ExtResource("15_c68cn")],
+"handcuffs": ExtResource("8_dm6q5"),
+"pocket_rustle": ExtResource("3_845pu"),
+"ui_click": SubResource("AudioStream_5femq")
+}

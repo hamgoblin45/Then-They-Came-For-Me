@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://j22i50g5odp8"]
+
+[ext_resource type="Script" uid="uid://0gvfijpq5qdy" path="res://Items/Interactables/Grabbables/grabbable.gd" id="1_2uhas"]
+[ext_resource type="Script" uid="uid://8yo1utsr8bth" path="res://Items/Interactables/interactable.gd" id="2_40rwh"]
+[ext_resource type="Texture2D" uid="uid://dtysfm7paobyb" path="res://Interface/icon_atlas.tres" id="3_40rwh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4f1db"]
+albedo_color = Color(0.962126, 0.554098, 0.725737, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_44aib"]
+material = SubResource("StandardMaterial3D_4f1db")
+radius = 0.25
+height = 0.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2uhas"]
+size = Vector3(0.33496094, 0.44506836, 0.4885254)
+
+[node name="Grabbable" type="RigidBody3D" unique_id=2086165457 node_paths=PackedStringArray("interact_area") groups=["grabbable"]]
+collision_layer = 7
+collision_mask = 3
+gravity_scale = 2.185
+script = ExtResource("1_2uhas")
+interact_area = NodePath("Interactable")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1241101166]
+mesh = SubResource("SphereMesh_44aib")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1101406501]
+shape = SubResource("BoxShape3D_2uhas")
+
+[node name="Interactable" type="Area3D" parent="." unique_id=1027235263]
+unique_name_in_owner = true
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("2_40rwh")
+interact_icon = ExtResource("3_40rwh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=2004564409]
+shape = SubResource("BoxShape3D_2uhas")

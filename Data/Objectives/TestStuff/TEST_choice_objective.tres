@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ObjectiveData" format=3 uid="uid://5qxnfyfegl6t"]
+
+[ext_resource type="Script" uid="uid://dl860ocyo52gv" path="res://Data/Objectives/ObjectiveData.gd" id="1_bxl6v"]
+[ext_resource type="Script" uid="uid://bu00q3p03457u" path="res://Data/InventoryItemData.gd" id="1_nvpou"]
+[ext_resource type="Script" uid="uid://ca4a8eabrgwaa" path="res://Data/Objectives/ObjectiveStepData.gd" id="2_nvpou"]
+
+[sub_resource type="Resource" id="Resource_bxl6v"]
+script = ExtResource("2_nvpou")
+text = "Click the advance button"
+metadata/_custom_type_script = "uid://ca4a8eabrgwaa"
+
+[resource]
+script = ExtResource("1_bxl6v")
+name = "Multi-Choice Objective"
+id = "multichoice_objective"
+description = "Here to test an objective with multple choices"
+step_datas = Array[ExtResource("2_nvpou")]([SubResource("Resource_bxl6v")])
+metadata/_custom_type_script = "uid://dl860ocyo52gv"

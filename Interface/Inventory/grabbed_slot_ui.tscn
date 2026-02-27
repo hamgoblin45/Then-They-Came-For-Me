@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cb06vgbnsed6c"]
+
+[ext_resource type="Script" uid="uid://c2pgrodfpcdpw" path="res://Interface/grabbed_slot_ui.gd" id="1_04ctf"]
+[ext_resource type="Texture2D" uid="uid://c8ptw3jtdkmqe" path="res://Interface/TestStuff/test_atlas_texture.tres" id="2_7lhxo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bjljn"]
+
+[node name="GrabbedSlotUI" type="PanelContainer" unique_id=366422637]
+visible = false
+custom_minimum_size = Vector2(60, 60)
+offset_right = 60.0
+offset_bottom = 60.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bjljn")
+script = ExtResource("1_04ctf")
+
+[node name="ItemUI" type="MarginContainer" parent="." unique_id=502746285]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="GrabbedItemTexture" type="TextureRect" parent="ItemUI" unique_id=824437207]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_7lhxo")
+expand_mode = 1
+
+[node name="GrabbedQuantity" type="Label" parent="ItemUI" unique_id=1101072507]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "10"

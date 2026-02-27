@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="ObjectiveData" format=3 uid="uid://6fxmo62vnuo4"]
+
+[ext_resource type="Script" uid="uid://bu00q3p03457u" path="res://Data/InventoryItemData.gd" id="1_6viwp"]
+[ext_resource type="Script" uid="uid://dl860ocyo52gv" path="res://Data/Objectives/ObjectiveData.gd" id="2_j4w2f"]
+[ext_resource type="Script" uid="uid://ca4a8eabrgwaa" path="res://Data/Objectives/ObjectiveStepData.gd" id="3_m0m16"]
+[ext_resource type="Script" uid="uid://deeunnxvx2oys" path="res://Data/InventorySlotData.gd" id="4_ps0r6"]
+[ext_resource type="Script" uid="uid://bhslcuxf56u7" path="res://Data/Objectives/ObjectiveStepGatherData.gd" id="5_1b0hh"]
+[ext_resource type="Resource" uid="uid://bd1e65ouafft3" path="res://Data/Objectives/TestStuff/TEST_required_item.tres" id="5_j4w2f"]
+
+[sub_resource type="Resource" id="Resource_m0m16"]
+script = ExtResource("4_ps0r6")
+item_data = ExtResource("5_j4w2f")
+quantity = 6
+metadata/_custom_type_script = "uid://deeunnxvx2oys"
+
+[sub_resource type="Resource" id="Resource_0m051"]
+script = ExtResource("5_1b0hh")
+required_items = Array[ExtResource("4_ps0r6")]([SubResource("Resource_m0m16")])
+text = "Gather Required Items"
+id = "gather_req_items"
+metadata/_custom_type_script = "uid://bhslcuxf56u7"
+
+[resource]
+script = ExtResource("2_j4w2f")
+name = "Gather Objective"
+id = "gather_objective"
+description = "Here to test objective progress based on inventory state"
+step_datas = Array[ExtResource("3_m0m16")]([SubResource("Resource_0m051")])
+metadata/_custom_type_script = "uid://dl860ocyo52gv"

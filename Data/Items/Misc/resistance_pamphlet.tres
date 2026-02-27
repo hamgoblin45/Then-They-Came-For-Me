@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dt7862782ov4v"]
+
+[ext_resource type="Script" uid="uid://dwbtgkwya4a0e" path="res://Data/ItemData.gd" id="1_mpk0f"]
+[ext_resource type="Texture2D" uid="uid://bif3lbyihceg0" path="res://Interface/TestStuff/test_item_spritesheet.png" id="2_upmrj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5x40"]
+atlas = ExtResource("2_upmrj")
+region = Rect2(352, 416, 32, 32)
+
+[resource]
+script = ExtResource("1_mpk0f")
+name = "Resistance Pamphlet"
+id = "resist_pamphlet"
+texture = SubResource("AtlasTexture_c5x40")
+description = "A pamphlet designed to recruit resistance fighters"
+flavor_text = "\"It's THEM who need us!\""
+concealability = 0.5
+contraband_level = 3
+metadata/_custom_type_script = "uid://dwbtgkwya4a0e"

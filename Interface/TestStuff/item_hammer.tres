@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bqn8wysukgnd8"]
+
+[ext_resource type="Script" uid="uid://dwbtgkwya4a0e" path="res://Data/ItemData.gd" id="1_bra7k"]
+[ext_resource type="PackedScene" uid="uid://ci3ahqvuqvbyo" path="res://Items/swingable.tscn" id="1_w3176"]
+[ext_resource type="Texture2D" uid="uid://bif3lbyihceg0" path="res://Interface/TestStuff/test_item_spritesheet.png" id="2_w3176"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jmbi"]
+atlas = ExtResource("2_w3176")
+region = Rect2(128, 320, 32, 32)
+
+[resource]
+script = ExtResource("1_bra7k")
+name = "Hammer"
+id = "hammer"
+texture = SubResource("AtlasTexture_1jmbi")
+description = "What you consider a \"nail\" is up to you"
+flavor_text = "Bash bash"
+buy_value = 40.0
+sell_value = 15.0
+concealability = 1.5
+contraband_level = 1
+useable = true
+equipped_scene = ExtResource("1_w3176")
+metadata/_custom_type_script = "uid://dwbtgkwya4a0e"

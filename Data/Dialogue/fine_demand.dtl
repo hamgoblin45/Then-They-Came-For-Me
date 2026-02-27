@@ -1,0 +1,5 @@
+Possession of this item required a ${current_fine} fine. We will be taking that now.
+- Pay fine | [if {player_money} >= {current_fine}]
+	[signal arg_type="dict" arg="{"choice_id":"pay_fine","signal_name":"choice_selected"}"]
+- Refuse
+	[signal arg_type="dict" arg="{"choice_id":"refuse_fine","signal_name":"choice_selected"}"]
