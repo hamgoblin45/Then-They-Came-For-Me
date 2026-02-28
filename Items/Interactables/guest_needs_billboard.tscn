@@ -57,5 +57,5 @@ text = "Stress"
 horizontal_alignment = 1
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=295489582]
-flip_h = true
+billboard = 2
 texture = SubResource("ViewportTexture_mf4tt")

@@ -35,7 +35,6 @@ func _ready():
 
 ## Controls sun, moon, light, and color of sky
 func handle_sky(hour: int, _m: int):
-	print("HANDLING THE FUCKING SKY")
 	#SUN
 	sun.rotation_degrees.x = GameState.cycle_time * 360 + 90
 	sun.light_color = sun_color.sample(GameState.cycle_time)

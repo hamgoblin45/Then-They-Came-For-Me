@@ -1,5 +1,5 @@
-This is prohibited. Explain yourself.
+This {contraband_name} is Class {contraband_level} contraband. Explain yourself.
 - You got me. Can't blame a guy for tryin'!
 	[signal arg_type="dict" arg="{"choice_id":"truth","signal_name":"choice_selected"}"]
-- [Lie] I'm holding it for a friend
+- [Lie] I don't know how that got there
 	[signal arg_type="dict" arg="{"choice_id":"lie","signal_name":"choice_selected"}"]

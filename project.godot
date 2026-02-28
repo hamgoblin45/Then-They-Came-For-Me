@@ -66,6 +66,8 @@ layout/style_directory={
 variables={
 "CurrentNPC": "",
 "accepted_fugitive": false,
+"contraband_level": "",
+"contraband_name": "",
 "current_fine": "",
 "player_money": ""
 }

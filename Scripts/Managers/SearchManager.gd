@@ -344,16 +344,27 @@ func interrogation_started(item: ItemData) -> bool:
 	if item.interrogation_dialogue_id != "":
 		dialogue_key = item.interrogation_dialogue_id + "_questioning"
 	
+	# Cinematic camera focus on whoever found it!
 	if assigned_searcher:
 		GameState.talking_to = assigned_searcher
+	else:
+		# If assigned_searcher is null, we are at the front door frisk.
+		# (Assuming your Major is in a "major" group, or just use the current talking_to)
+		pass 
 	
-		DialogueManager.start_dialogue(dialogue_key, assigned_searcher, "Officer")
+	# NEW: Inject the item details into Dialogic!
+	Dialogic.VAR.contraband_name = item.name
+	Dialogic.VAR.contraband_level = str(item.contraband_level)
+	
+	# Start the dialogue
+	DialogueManager.start_dialogue(dialogue_key, assigned_searcher, "Officer")
 	
 	var choice = await DialogueManager.dialogue_choice_selected
 	
-	# CRITICAL: Wait for the current questioning dialogue to end before starting consequences
+	# Wait for the questioning dialogue to close
 	await DialogueManager.dialogue_ended
 	
+	# Branch based on their choice
 	if choice == "lie":
 		return await _handle_lie_attempt(item)
 	else:

@@ -1,7 +1,7 @@
 extends Node
 # Handles the logic involved in controlling game time
 
-var time_rate: float = 0.0005
+var time_rate: float = 0.0025
 
 func _ready() -> void:
 	_start_new_day()
